@@ -1,0 +1,541 @@
+{
+    "name":"Diet name",
+    "type": "Diet type",
+    "features":[
+       "Breakfast: 0Kcal",
+       "Lunch: 0Kcal",
+       "Dinner : 0kcal",
+       "Snack 1: 0Kcal",
+       "Snack 2:  0Kcal"
+    ],
+    "days":[
+                  { 
+                      "name":"Day 1",
+          "breakfast":{
+             "title":" ",
+             "calories":0,
+             "items":"",
+             "directions":"",
+             "tip":""
+          },
+          "lunch":{
+             "title":"",
+             "calories":0,
+             "items":"",
+             "directions":"",
+             "tip":""
+          },
+          "dinner":{
+             "title":"",
+             "calories":0,
+             "items":" ",
+             "directions":"",
+             "tip":""
+          },
+          "snack1":{
+             "title":"  ",
+             "calories":0,
+             "items":" ",
+             "directions":"",
+             "tip":""
+          },
+          "snack2":{
+             "title":"",
+             "calories":0,
+             "items":"",
+             "directions":"",
+             "tip":""
+          }
+       },
+          { 
+                      "name":"Day 2",
+          "breakfast":{
+             "title":" ",
+             "calories":0,
+             "items":"",
+             "directions":"",
+             "tip":""
+          },
+          "lunch":{
+             "title":"",
+             "calories":0,
+             "items":"",
+             "directions":"",
+             "tip":""
+          },
+          "dinner":{
+             "title":"",
+             "calories":0,
+             "items":" ",
+             "directions":"",
+             "tip":""
+          },
+          "snack1":{
+             "title":"  ",
+             "calories":0,
+             "items":" ",
+             "directions":"",
+             "tip":""
+          },
+          "snack2":{
+             "title":"",
+             "calories":0,
+             "items":"",
+             "directions":"",
+             "tip":""
+          }
+       },
+            { 
+                    "name":"Day 3",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },{ 
+                "name":"Day 4",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },{ 
+                "name":"Day 5",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },{ 
+                "name":"Day 6",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },{ 
+                "name":"Day 7",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },
+            { 
+                "name":"Day 8",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },
+            { 
+                "name":"Day 9",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },
+            { 
+                "name":"Day 10",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },
+            { 
+                "name":"Day 11",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },
+            { 
+                "name":"Day 12",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },
+            { 
+                "name":"Day 13",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            },
+            { 
+                "name":"Day 14",
+            "breakfast":{
+            "title":" ",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "lunch":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            },
+            "dinner":{
+            "title":"",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack1":{
+            "title":"  ",
+            "calories":0,
+            "items":" ",
+            "directions":"",
+            "tip":""
+            },
+            "snack2":{
+            "title":"",
+            "calories":0,
+            "items":"",
+            "directions":"",
+            "tip":""
+            }
+            }
+    ]
+ }

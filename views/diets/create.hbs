@@ -1,0 +1,346 @@
+
+<style>
+    .card{
+        display: inline-block;
+    }
+</style>
+
+<nav class="navbar navbar-expand navbar-dark fixed-top nav-top-dashboard max-height-navbar" style="">
+    <a href="#menu-toggle" id="menu-toggle" class="navbar-brand">
+        <span class="logomove">
+            <img src="../img/mypt_logo_vector.svg" class="img-fluid dash-logo-nav " style="" />
+        </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+        aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active dash-text-home">
+                <a class="nav-link dash-text-home" href="/"><b>Home MyPT</b><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0"></form>
+    </div>
+</nav>
+<div id="wrapper" class="">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav mt-5">
+            <li><a href="/admin" class="text-status-darkpink-sidebar bb">Admin Dashboard</a></li>
+            <hr>
+            <li><a href="users/logout" class="text-pink-sidebar">Logout</a></li>
+        </ul>
+    </div>
+    <div class="container-fluid mt-5 pt-5 ">
+        {{> _messages}}
+        <div class="row bg-light rounded">
+            <form action="/createDiet" method="POST" class="col-lg-12 checkpadding">
+                <input type="hidden" id='savedDays' name="savedDays">
+                <div class="col-lg-12 checkpadding">
+                    <div class="card-header dietname">
+                        <h1>Diet Name:</h1>
+                        <input type="name" id="name" name="name" class="form-control" value="" required>
+                    </div>
+                </div>
+                <div class="col-lg-12 checkpadding">
+                    <div class="card-header  dash-status-style text-pink ">
+                        <div>Average calories:</div>
+                        <input type="number" id="calories" name="calories" class="form-control" value="" min="0"
+                            required>
+                    </div>
+                </div>
+                <div class="col-lg-12 checkpadding">
+                    <div class="card-header dietname">
+                        <span class="card-text dash-status-style text-pink mt-1">Features:</span> <span
+                            class="blackstyle"><input type="text" id="features" name="features" class="form-control"
+                                value="{{features}}" required></span>
+                    </div>
+                </div>
+                <div class="col-lg-12 checkpadding" id='main'>
+                    <div class="card-header dietname">
+                        <div class="dash-status-style text-pink">Type of diet:
+                            <select class="custom-select" id="diet_type" name="diet_type">
+                                <option selected>Choose</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Vegetarian">Vegetarian</option>
+                                <option value="Vegan">Vegan</option>
+                                <option value="Gluten free">Gluten free</option>
+                                <option value="Lactose free">Lactose free</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="card-header dietname">
+                        <div class="col-lg-12 checkpadding right text-center">
+                            <button type="button" class="btn btn-addday text-light mt-3" data-toggle="modal"
+                                data-target="#exampleModal" id="mydiets" onclick="createDayDiv()">Add day</button>
+                        </div>
+                    </div>
+                    <div class="card-header dietname">
+                        <div class="col-lg-12 checkpadding right text-center">
+                            <button type="submit" class="btn btn-addday text-light mt-3">Save Diet</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {{!-- comienzo de modal --}}
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-pink" id="exampleModalLabel">Add plates</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="dash-status-style text-pink">Type of food:</div>
+                            <select class="custom-select" id="food_type" name="food_type" onchange="activateSearch();">
+                                <option selected>Choose</option>
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Meal">Meal</option>
+                                <option value="Snack">Snack</option>
+                            </select>
+                            <div id='search' class="checkpadding mt-2 ml-auto" style="display: none;">
+                                <input type="button" value="Search Plates" class='btn rounded btn-pink mt-2'
+                                    onclick="filterPlates();">
+                            </div>
+                            <div id='return'
+                                class="col-lg-4 col-sm-6 checkpadding mt-3 list-group text-center mr-auto ml-auto"
+                                style="justify-content: center;">
+
+                            </div>
+                           
+                            <div id='preview' class="col-lg-2 col-sm-6 checkpadding mt-2">
+                                <div class="dash-status-style text-pink" id="prevTitle">
+                                    Preview:
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            onclick='cancelDay()'>Cancel</button>
+                        <input type="button" class="btn btn-primary" data-target="#exampleModal" data-toggle="modal"
+                            onclick="saveDay();" value="Save Day">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{!-- fin de modal --}}
+    </div>
+    <script>
+        var daysDiet = [Object];
+        var daysC = [];
+        var platos = {{{ json plates }}}
+
+        function cancelDay() {
+            let newDayDiv = document.getElementById(daysDiet[daysDiet.length - 1].id)
+            newDayDiv.parentNode.removeChild(newDayDiv);
+            console.log(newDayDiv)
+            daysDiet.pop();
+        }
+        function createDayDiv() {
+            let newDivDay = document.createElement('div')
+            newDivDay.classList.add("card", "dietname", "col-12", "text-align-card")
+            newDivDay.id = "Day" + daysDiet.length
+            titleDay = document.createElement('h5')
+            titleDay.innerText = "Day " + (daysDiet.length +1)
+            newDivDay.append(titleDay)
+            document.getElementById('main').append(newDivDay)
+            daysDiet.push(newDivDay)
+        }
+
+        function activateSearch() {
+
+            let selection = document.getElementById('food_type')
+            let searchBut = document.getElementById('searchBut')
+            if (selection != 'Choose') {
+                searchBut.disabled = false
+            }
+        }
+        function activateSearch() {
+            document.getElementById("search").style.display = '';
+        }
+        function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        }
+
+        function filterPlates() 
+        {
+            //cambiar sino funciona por let o let 
+            let lacosa = document.getElementById('return')
+
+            removeAllChildNodes(lacosa)
+
+            let food = document.getElementById("food_type").value;
+            console.log(food)
+            let diet = document.getElementById("diet_type").value;
+            console.log(diet)
+
+            //lista del modal
+            platos.forEach(e => {
+               
+                    e.diet_type.forEach(j => {
+                        if (j == diet){
+                            if (e.food_type === food ) {
+                            
+                                let plate = document.createElement('a');
+                                plate.addEventListener('click', function () {
+                                    addPreview(e)
+                                }, false);
+                                plate.classList.add("btn", "btn-secondary", "my-1", "mx-1", "list-group-item", "list-group-item-action", "border")
+                                let title = document.createElement('span');
+                                title.innerText = e.title + " - ";
+                                plate.appendChild(title)
+                                let calories = document.createElement('span');
+                                calories.innerText = "Kcal:" + e.calories;
+                                plate.appendChild(calories)
+                                let br = document.createElement('br')
+                                plate.appendChild(calories)
+                                plate.appendChild(br)
+                                document.getElementById('return').append(plate)
+                        };
+                        }})    
+            })
+                 
+                
+        }
+
+        function addPreview(plate) {
+            //ESTE ES EL MODAL
+            let card = document.createElement('span')
+            card.style.display = "inline-block";
+            card.id = plate._id
+            card.classList.add("text-center")
+            card.style.border = "1px solid #dee2e6"
+            card.style.borderRadius = "15px"
+            
+
+            let cardbody = document.createElement('span')
+            cardbody.style.display = "inline-block";
+            cardbody.style.minHeight = "200px"
+            cardbody.style.maxHeight = "250px"
+            cardbody.style.border = "5px solid #dee2e6"
+
+            let h5 = document.createElement('h5')
+            h5.classList.add("text-status-darkpink-preview", "card-title")
+            h5.innerText = plate.title
+
+            let p = document.createElement('p')
+            p.classList.add("card-text", "text-status-darkpink-preview")
+            p.innerText = "Calories:" + plate.calories
+
+            let img = document.createElement('img')
+            img.classList.add("card-img-top")
+            if (plate.img) {
+                img.src = "data:image/" + plate.img.contentType + ";base64," + plate.img.data
+            }
+
+            
+            cardbody.append(img)
+            cardbody.append(h5)
+            cardbody.append(p)
+            card.append(cardbody)
+
+            let boton = document.createElement('span')
+            boton.id = 'button';
+            boton.name = plate._id;
+            
+            boton.style.border = "3px solid";
+            boton.style.backgroundColor = "white";
+            boton.style.display = "inline-block";
+            boton.addEventListener('click', function () {
+                boton = document.getElementById('button')
+                boton.remove()
+            }, false);
+            boton.append(card)
+            document.getElementById('preview').append(boton)
+        }
+        function previewImage() {
+            let img = document.getElementById("preview");
+            console.log(document.getElementById("preview"))
+            let file = document.getElementById("file").files;
+            if (file.length > 0) {
+                let fileReader = new FileReader();
+
+                fileReader.onload = function (event) {
+                    document.getElementById("preview").setAttribute("src", event.target.result);
+                };
+
+                fileReader.readAsDataURL(file[0]);
+            }
+        }
+        function saveDay() {
+            let day = document.getElementById('preview').childNodes;
+            let fullday = [];
+            let newDay = {}
+            day.forEach(d => {
+                if (d.id === 'button') {
+                    fullday.push(d.name);
+                }
+            })
+
+            //LOS CARDS - CREATE DIET
+            fullday.forEach(d => {
+                platos.forEach(p => {
+                    if (d == p._id) {
+                        let card = document.createElement('span')
+                        card.id = p._id
+                        card.style.border = "1px solid #dee2e6"
+                        card.style.minHeight = "350px"
+                        card.style.maxHeight = "350px"
+
+
+                        card.style.borderRadius = "15px"
+                        card.classList.add('card', "mt-2", "ml-2","maxsize-card", "display-inlinejz")
+                        let cardbody = document.createElement('span')
+              
+                        
+                        let h5 = document.createElement('h5')
+                        h5.classList.add("text-status-darkpink-preview", "card-title", "mx-1")
+                        h5.innerText = p.title
+                        h5.style.minHeight = "75px"
+                        let paragraph = document.createElement('p')
+
+                        paragraph.classList.add("card-text", "text-status-darkpink-preview")
+                        paragraph.innerText = "Calories:" + p.calories
+                        let img = document.createElement('img')
+                        img.classList.add("card-img-top")
+                        img.style.minHeight = "200px"
+                        img.style.maxHeight = "200px"
+                        if (p.img){
+                            img.src = "data:image/" + p.img.contentType + ";base64," + p.img.data
+                        }
+                        cardbody.append(img)
+                        cardbody.append(h5)
+                        cardbody.append(paragraph)
+                        card.append(cardbody)
+                        document.getElementById(daysDiet[daysDiet.length - 1].id).append(card)
+                    }
+                })
+            })
+            removeAllChildNodes(document.getElementById('preview'))
+            let prevtitle = document.createElement('div')
+            prevtitle.classList.add("dash-status-style", "text-pink")
+            prevtitle.innerText = "Preview"
+            document.getElementById('preview').append(prevtitle)
+            console.log(fullday)
+            newDay.name = 'day ' + daysC.length
+            newDay.value = (fullday)
+            console.log(newDay)
+            let temp = newDay
+            daysC.push(temp)
+            console.log(daysC)
+            document.getElementById('savedDays').value = JSON.stringify(daysC)
+        }
+    </script>

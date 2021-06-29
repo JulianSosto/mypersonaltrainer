@@ -1,0 +1,39 @@
+<style>
+  body {
+    background-color: rgba(0, 220, 255, 0.14);
+  }
+
+  .btn-pink {
+    background-color: #e13590 !important;
+    color: white;
+  }
+
+  .title2 {
+    color: #e13590 !important;
+  }
+</style>
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3 title2">
+          Recover password
+        </h1>
+        {{> _messages}}
+        <form action="/users/register" method="POST">
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" {{#if email }}
+              value={{email}} {{else}} value=" " {{/if}} />
+          </div>
+
+          <button type="submit" class="btn btn-light text-light btn-block btn-pink">
+            Recover password
+          </button>
+        </form>
+        <p class="lead mt-4">Have An Account? <a href="/users/login" class="title2">Login here!</a></p>
+      </div>
+    </div>
+  </div>
+</div>

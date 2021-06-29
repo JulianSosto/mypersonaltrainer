@@ -1,0 +1,132 @@
+<style>
+    body {
+        background: rgb(238, 174, 202);
+        background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+
+    }
+
+    a:link,
+    a:visited,
+    a:active {
+        text-decoration: none;
+    }
+</style>
+
+<nav class="navbar navbar-expand navbar-dark fixed-top nav-top-dashboard max-height-navbar">
+    <a href="#menu-toggle" id="menu-toggle" class="navbar-brand">
+        <span class="logomove">
+            <img src="img/mypt_logo_vector.svg" class="img-fluid dash-logo-nav " style="" />
+        </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+        aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active dash-text-home">
+                <a class="nav-link dash-text-home" href="/"><b>Home MyPT</b><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0"></form>
+    </div>
+</nav>
+<div id="wrapper" class="">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav mt-5">
+            
+            <li><a href="#" class="text-status-darkpink-sidebar bb">My Dashboard</a></li>
+            <hr>
+            <li><a href="#accountdetails" class="text-status-darkpink-sidebar bb">Account details</a></li>
+            <hr>
+            <li><a href="users/logout" class="text-pink-sidebar">Logout</a></li>
+            <hr>
+        </ul>
+    </div>
+
+
+    <!-- botones-->
+
+    <div class="mt-5 pt-5 text-center">
+        {{> _messages}}
+        <a href="/diets/create" class="btn btn-light mb-2 btn-add" style="max-height: 170px;">
+            Create diet
+        </a>
+        <a href="/plates/list" class="btn btn-light mb-2 btn-add" style="max-height: 170px;">
+            Plates List
+        </a>
+    </div>
+    <!-- caRds-->
+    <div class="container-fluid mt-2">
+        <div class="row  centerdiet">
+            {{#each diets}}
+            <div class="card mt-2 ml-2" style="width: 18rem; min-height:230px">
+                <a href="/diets/{{_id}}">
+                    <div class="card-body text-center" style="min-height: 150px;">
+
+                        <h5 class="card-title dietname">{{name}}</h5>
+                        <hr>
+                        <p class="card-text blackstyle text-dark" style="min-height: 90px;">
+                            {{features}}
+                        </p>
+                        <hr>
+                        <a href="/edit/{{_id}}" class="btn btn-light btn-float mb-2 btn-pink float-left ml-5">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a href="#" class="card-link float-right mr-5">
+                            <form action="/{{_id}}?_method=delete" method="POST" id="delete-form">
+                                <input type="hidden" name="_method" value="delete" />
+                                <button type="submit" class="btn btn-light mb-2 btn-pink">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </form>
+                        </a>
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+        </div>  
+    </div>
+    <div class="jumbotron text-center mt-4" id="accountdetails">
+        <h1 class="display-4 dash-workout" id="">My Account Details</h1>
+        <hr class="my-3" />
+        <form action="/users/edit/{{_id}}?_method=PUT" method='POST'>
+            <input type="hidden" name="_method" value="PUT">
+            <div class="dash-status-style-diet">
+                User name:
+                <input type="name" id="name" name="name" class="form-control text-center mx-auto" value="{{name}}"
+                    style="max-width: 500px;" />
+            </div>
+            <div class="dash-status-style-diet">
+                E-mail:
+                <input type="email" id="email" name="email" class="form-control text-center mx-auto" value="{{email}}"
+                    style="max-width: 500px;" />
+            </div>
+            <input type="submit" class="btn btn-light my-2 btn-pink text-light" value="Edit account details" disabled>
+        </form>
+        <div class="card-body">
+            {{!-- <b>Choose an alphanumeric password.</b>
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="password">Enter your current password.</label>
+                    <input type="password" id="password" name="password" class="form-control text-center mx-auto"
+                        placeholder="Enter Password" style="max-width: 500px;" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Enter your new password.</label>
+                    <input type="password" id="newpassword1" name="newpassword1"
+                        class="form-control text-center mx-auto" placeholder="Enter Password"
+                        style="max-width: 500px;" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Repeat your new password.</label>
+                    <input type="password" id="newpassword2" name="newpassword2"
+                        class="form-control text-center mx-auto" placeholder="Enter Password"
+                        style="max-width: 500px;" />
+                </div> --}}
+                <a href="/users/changepass/{{_id}}" class="btn btn-light mb-2 btn-pink text-light">Change your password</a>
+        </div>
+    </div>
+    <!--# /Jumbotron -->
+</div>

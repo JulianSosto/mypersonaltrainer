@@ -1,0 +1,348 @@
+<nav class="navbar navbar-expand navbar-dark fixed-top nav-top-dashboard max-height-navbar" style="">
+   <a href="#menu-toggle" id="menu-toggle" class="navbar-brand">
+      <span class="logomove">
+         <img src="img/mypt_logo_vector.svg" class="img-fluid dash-logo-nav " style="" />
+      </span>
+   </a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+      aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarsExample02">
+      <ul class="navbar-nav mr-auto">
+         <li class="nav-item active dash-text-home">
+            <a class="nav-link dash-text-home" href="/"><b>Home MyPT</b><span class="sr-only">(current)</span></a>
+         </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0"></form>
+   </div>
+</nav>
+<div id="wrapper" class="">
+   <!-- Sidebar -->
+   <div id="sidebar-wrapper">
+      <ul class="sidebar-nav mt-5">
+         <li><a href="/admin" class="text-status-darkpink-sidebar">Admin Dashboard</a></li>
+         <li><a href="#accountdetails" class="text-status-darkpink-sidebar">Account details</a></li>
+         <li><a href="users/logout" class="text-pink-sidebar">Logout</a></li>
+      </ul>
+   </div>
+   <!-- Add -->
+   <div class="mt-5 pt-4 text-center">
+  
+         <form id="dietForm" action="/chargeDiet" method="POST">
+            <div class="card">
+               <div class="card-header dietname">
+                  <h1>Diet Name:</h1>
+                  <input type="name" id="name" name="name" class="form-control" value="{{name}}">
+               </div>
+               <div class="card-body">
+                  <span class="card-text dash-status-style text-pink mt-1">Type:</span>
+                 <div class="input-group mb-3">
+                      <select class="custom-select" id="inputGroupSelect01" type="text" id="type" name="type" class="form-control"
+                        value="{{type}}" >
+                     <option selected> {{type}}(Choose one...)</option>
+                     <option value="Normal">Normal</option>
+                     <option value="Vegetarian">Vegetarian</option>
+                     <option value="Vegan">Vegan</option>
+                     <option value="Gluten free">Gluten free</option>
+                     <option value="Lactose free">Lactose free</option>
+
+                  </select>
+                  </div><br />
+                  <hr>
+                  <span class="card-text dash-status-style text-pink mt-1">Features:</span> <span
+                     class="blackstyle"><input type="text" id="features" name="features" class="form-control"
+                        value="{{features}}"></span><br />
+                  <hr>
+                  <h5 class="card-title text-status-darkpink-admin ">Week 1</h5>
+                  <!-- Week 1-->
+                  <div id="accordion">
+                     {{#each week1}}
+                     <!-- DAYS ------------------------------------------------------ -->
+                     <div class="card">
+                        <div class="card-header" id="heading{{@index}}">
+                           <h5 class="mb-0">
+                              <button type="button" class="btn accordion-days" data-toggle="collapse"
+                                 data-target="#collapse{{@index}}" aria-expanded="true"
+                                 aria-controls="collapse{{@index}}">
+                                 Day {{inc @index}}
+                              </button>
+                           </h5>
+                        </div>
+                        <div id="collapse{{@index}}" class="collapse" aria-labelledby="heading{{@index}}"
+                           data-parent="#accordion2" style="background-color: rgb(219 250 255);">
+                           <div class="card-body">
+                              <!-- ROW 1: - Breakfast - Dinner - Lunch days-->
+                              <div class="row">
+                                 <div class="col-lg-4 col-sm-12">
+                                    <!-- BREAKFAST -->
+                                    <span class="text-status-darkpink text-center">Breakfast:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="breakfast_title"
+                                          name="breakfast_title" class="form-control"
+                                          value="{{breakfast.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="breakfast_calories"
+                                          name="breakfast_calories" class="form-control"
+                                          value="{{breakfast.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"><input type="text" id="breakfast_items"
+                                          name="breakfast_items" class="form-control"
+                                          value="{{breakfast.items}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="breakfast_directions"
+                                       name="breakfast_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{breakfast.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="breakfast_tip" name="breakfast_tip"
+                                       cols="30" rows="10 " class="form-control"
+                                       aria-label="With textarea">{{breakfast.tip}}</textarea><br />
+                                 </div>
+                                 <div class="col-lg-4 col-sm-12 mt-2">
+                                    <!-- LUNCH -->
+                                    <span class="text-status-darkpink text-center">Lunch:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="lunch_title" name="lunch_title"
+                                          class="form-control" value="{{lunch.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="lunch_calories"
+                                          name="lunch_calories" class="form-control"
+                                          value="{{lunch.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"><input type="text" id="lunch_items" name="lunch_items"
+                                          class="form-control" value="{{lunch.items}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="lunch_directions"
+                                       name="lunch_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{lunch.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="lunch_tip" name="lunch_tip" cols="30"
+                                       rows="5" class="form-control"
+                                       aria-label="With textarea">{{lunch.tip}}</textarea><br />
+                                 </div>
+                                 <div class="col-lg-4 col-sm-12 mt-2">
+                                    <!-- DINNER -->
+                                    <span class="text-status-darkpink text-center">Dinner:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="dinner_title" name="dinner_title"
+                                          class="form-control" value="{{dinner.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="dinner_calories"
+                                          name="dinner_calories" class="form-control"
+                                          value="{{dinner.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"><input type="text" id="dinner_items" name="dinner_items"
+                                          class="form-control" value="{{dinner.items}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="dinner_directions"
+                                       name="dinner_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{dinner.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="dinner_tip" name="dinner_tip"
+                                       cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{dinner.tip}}</textarea><br />
+                                 </div>
+                              </div>
+                              <!-- ROW 2 : snacks 1 y 2 days -->
+                              <div class="row">
+                                 <div class="col-6">
+                                    <span class="text-status-darkpink text-center">Snack 1:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="snack1_title" name="snack1_title"
+                                          class="form-control" value="{{snack1.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="snack1_calories"
+                                          name="snack1_calories" class="form-control"
+                                          value="{{snack1.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"><input type="text" id="snack1_items" name="snack1_items"
+                                          class="form-control" value="{{snack1.items}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="snack1_directions"
+                                       name="snack1_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{snack1.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="snack1_tip" name="snack1_tip"
+                                       cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{snack1.tip}}</textarea><br />
+                                 </div>
+                                 <div class="col-6">
+                                    <span class="text-status-darkpink text-center">Snack 2:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="snack2_title" name="snack2_title"
+                                          class="form-control" value="{{snack2.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="snack2_calories"
+                                          name="snack2_calories" class="form-control"
+                                          value="{{snack2.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"><input type="text" id="snack2_items" name="snack2_items"
+                                          class="form-control" value="{{snack2.items}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="snack2_directions"
+                                       name="snack2_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{snack2.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="snack2_tip" name="snack2_tip"
+                                       cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{snack2.tip}}</textarea><br />
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     {{/each}}
+                  </div>
+                  <h5 class="card-title text-status-darkpink-admin ">Week 2</h5>
+                  <!-- Week 2-->
+                  <div id="accordion2">
+                     {{#each week2}}
+                     <!-- DAYS ------------------------------------------------------ -->
+                     <div class="card">
+                        <div class="card-header" id="otracosa{{@index}}">
+                           <h5 class="mb-0">
+                              <button type="button" class="btn accordion-days" data-toggle="collapse"
+                                 data-target="#collapseb{{@index}}" aria-expanded="true"
+                                 aria-controls="collapseb{{@index}}">
+                                 Day {{inc @index}}
+                              </button>
+                           </h5>
+                        </div>
+                        <div id="collapseb{{@index}}" class="collapse" aria-labelledby="otracosa{{@index}}"
+                           data-parent="#accordion2" style="background-color: rgb(219 250 255);">
+                           <div class="card-body">
+                              <!-- ROW 1: - Breakfast - Dinner - Lunch WEEK2-->
+                              <div class="row">
+                                 <div class="col-lg-4 col-sm-12">
+                                    <!-- BREAKFAST -->
+                                    <span class="text-status-darkpink text-center">Breakfast:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="breakfast_title"
+                                          name="breakfast_title" class="form-control"
+                                          value="{{breakfast.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="breakfast_calories"
+                                          name="breakfast_calories" class="form-control"
+                                          value="{{breakfast.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"></span> <textarea name="" id="breakfast_items"
+                                       name="breakfast_items" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{breakfast.items}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="breakfast_directions"
+                                       name="breakfast_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{breakfast.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="breakfast_tip" name="breakfast_tip"
+                                       cols="30" rows="10 " class="form-control"
+                                       aria-label="With textarea">{{breakfast.tip}}</textarea><br />
+                                 </div>
+                                 <div class="col-lg-4 col-sm-12 mt-2">
+                                    <!-- LUNCH -->
+                                    <span class="text-status-darkpink text-center">Lunch:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="lunch_title" name="lunch_title"
+                                          class="form-control" value="{{lunch.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="lunch_calories"
+                                          name="lunch_calories" class="form-control"
+                                          value="{{lunch.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"><input type="text" id="lunch_items" name="lunch_items"
+                                          class="form-control" value="{{lunch.items}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="lunch_directions"
+                                       name="lunch_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{lunch.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="lunch_tip" name="lunch_tip" cols="30"
+                                       rows="5" class="form-control"
+                                       aria-label="With textarea">{{lunch.tip}}</textarea><br />
+                                 </div>
+                                 <div class="col-lg-4 col-sm-12 mt-2">
+                                    <!-- DINNER -->
+                                    <span class="text-status-darkpink text-center">Dinner:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="dinner_title" name="dinner_title"
+                                          class="form-control" value="{{dinner.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="dinner_calories"
+                                          name="dinner_calories" class="form-control"
+                                          value="{{dinner.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"><input type="text" id="dinner_items" name="dinner_items"
+                                          class="form-control" value="{{dinner.items}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="dinner_directions"
+                                       name="dinner_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{dinner.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="dinner_tip" name="dinner_tip"
+                                       cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{dinner.tip}}</textarea><br />
+                                 </div>
+                              </div>
+                              <!-- ROW 2 : snacks 1 y 2 WEEK2 -->
+                              <div class="row">
+                                 <div class="col-6">
+                                    <span class="text-status-darkpink text-center">Snack 1:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="snack1_title" name="snack1_title"
+                                          class="form-control" value="{{snack1.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="snack1_calories"
+                                          name="snack1_calories" class="form-control"
+                                          value="{{snack1.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"><input type="text" id="snack1_items" name="snack1_items"
+                                          class="form-control" value="{{snack1.items}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="snack1_directions"
+                                       name="snack1_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{snack1.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="snack1_tip" name="snack1_tip"
+                                       cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{snack1.tip}}</textarea><br />
+                                 </div>
+                                 <div class="col-6">
+                                    <span class="text-status-darkpink text-center">Snack 2:</span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Title: </span>
+                                    <span class="blackstyle"><input type="text" id="snack2_title" name="snack2_title"
+                                          class="form-control" value="{{snack2.title}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Calories: </span>
+                                    <span class="blackstyle"><input type="text" id="snack2_calories"
+                                          name="snack2_calories" class="form-control"
+                                          value="{{snack2.calories}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Items: </span>
+                                    <span class="blackstyle"><input type="text" id="snack2_items" name="snack2_items"
+                                          class="form-control" value="{{snack2.items}}"></span><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Directions: </span>
+                                    <span class="blackstyle"></span> <textarea id="snack2_directions"
+                                       name="snack2_directions" cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{snack2.directions}}</textarea><br />
+                                    <span class="text-pink dash-status-style-diet text-center">Tips: </span>
+                                    <span class="blackstyle"></span> <textarea id="snack2_tip" name="snack2_tip"
+                                       cols="30" rows="5" class="form-control"
+                                       aria-label="With textarea">{{snack2.tip}}</textarea><br />
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     {{/each}}
+                  </div>
+               </div>
+
+           
+            <!--# /Jumbotron -->
+               <div class="text-center mt-2 btn-cancel">
+      <div class="col-12">
+         <input type="submit" value="Save Diet" class='btn rounded btn-pink-float'>
+         </div>
+      <div class="col-12">
+         <button type="button" class="btn btn-pink-float mt-2 rounded"><a href="/admin" class="text-white">Cancel</a></button>
+      </div>                                      
+   </div>
+
+         </form>

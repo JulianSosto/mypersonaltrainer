@@ -1,0 +1,61 @@
+<style>
+  body {
+    background-color: rgba(0, 220, 255, 0.14);
+  }
+
+  .btn-pink {
+    background-color: #e13590 !important;
+    color: white;
+  }
+
+  .title2 {
+    color: #e13590 !important;
+  }
+</style>
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3 title2">
+          Change your password
+        </h1>
+        {{> _messages}}
+        <form action="/users/changepass?_method=PUT" method='POST'>
+          <input type="hidden" name="_method" value="PUT">
+          <input type="hidden" name="id" value="{{_id}}">
+          <div class="form-group">
+            <label for="password">Current Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Current Password"/>
+          </div>
+          <div class="form-group">
+            <label for="newpassword">New Password</label>
+            <input type="password" id="newpassword" name="newpassword" class="form-control"  onkeyup="validate()"
+              placeholder="New Password" />
+          </div>
+          <div class="form-group">
+            <label for="newpassword2">Confirm New Password</label>
+            <input type="password" id="newpassword2" name="newpassword2" class="form-control" onkeyup="validate()"
+              placeholder="Confirm New Password" />
+          </div>
+          <button type="submit" class="btn btn-light text-light btn-block btn-pink" disabled>
+            Change my password
+          </button>
+        </form>
+        <p class="lead mt-4">Have An Account? <a href="/users/login" class="title2">Login here!</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+  var check = function () {
+    if (document.getElementById('password').value ==
+      document.getElementById('confirm_password').value) {
+      document.getElementById('message').style.color = 'green';
+      document.getElementById('message').innerHTML = 'matching';
+    } else {
+      document.getElementById('message').style.color = 'red';
+      document.getElementById('message').innerHTML = 'not matching';
+    }
+  }
+</script>

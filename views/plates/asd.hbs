@@ -1,0 +1,26 @@
+
+<!-- caRds-->
+    <div class="container-fluid mt-2">
+        <div class="row  centerdiet" >
+             
+                {{#each alPlates}}
+            <div class="card mt-2 ml-2" style="width: 18rem;" >
+                <div class="card-body">
+                           <img class="card-img-top" src="data:image/{{img.contentType}};base64,{{formatImg img.data}}"
+                                alt="Alt for image" style="max-height: 350px; width:100%; min-height:350px;border-radius:25px">
+                                <h5 class="card-title text-pink">{{title}}</h5>
+                                <h3 class="title-food text-pink">{{food_type}}</h3>
+                                  <p class="text-pink dash-status-style">Calories: <span
+                                                class="text-dark">{{calories}}</span></p>
+                                               
+                                       <button type="button" class="btn margin-showmodal btn-pink text-light"
+                                    data-toggle="modal" data-target=".bd-example-modal-lg ">Change plate</button>
+
+                                        
+                </div>
+            </div>
+            {{/each}}
+               
+        </div>
+    </div>
+    <!-- caRds-->

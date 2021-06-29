@@ -1,0 +1,221 @@
+
+
+<nav class="navbar navbar-expand navbar-dark fixed-top nav-top-dashboard max-height-navbar" style="">
+   <a href="#menu-toggle" id="menu-toggle" class="navbar-brand">
+      <span class="logomove">
+         <img src="img/mypt_logo_vector.svg" class="img-fluid dash-logo-nav " style="" />
+      </span>
+   </a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+      aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarsExample02">
+      <ul class="navbar-nav mr-auto">
+         <li class="nav-item active dash-text-home">
+            <a class="nav-link dash-text-home" href="/"><b>Home MyPT</b><span class="sr-only">(current)</span></a>
+         </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0"></form>
+   </div>
+</nav>
+<div id="wrapper" class="">
+   <!-- Sidebar -->
+   <div id="sidebar-wrapper">
+    <ul class="sidebar-nav mt-5">
+            <li><a href="/admin" class="text-status-darkpink-sidebar bb">Admin Dashboard</a></li>
+            <hr>
+            <li><a href="users/logout" class="text-pink-sidebar">Logout</a></li>
+        </ul>  
+   </div>
+   <!-- Edit -->
+   <div class="mt-5 pt-5 container-fluid">
+         <input type="hidden" name="_method" value="PUT">
+         <input type="hidden" id='updatedDays' name="updatedDays">
+         <div class="jumbotron">   
+            <div class="dietname col-lg-12 ">
+               <h1 class="">Diet Name: </h1>
+               <input type="name" id="name" name="name" class="form-control" value="{{name}}" readonly>
+            </div>
+          <hr>
+               <div class="col-lg-12">
+               <h1 class="dash-status-style text-pink ">Type of diet: </h1>
+               <div class="input-group">
+                   <input type="name" id="name" name="name" class="form-control" value="{{type}}" readonly>
+               </div>
+               </div>
+               <hr>
+               <div class="col-lg-12">
+               <span class="card-text dash-status-style text-pink mt-1">Features:</span> <span class="blackstyle"><input
+                     type="text" id="features" name="features" class="form-control" value="{{features}}" readonly></span>
+               </div>
+               <div class="col-lg-12">
+               <span class="card-text dash-status-style text-pink mt-1">Calories:</span> <span class="blackstyle"><input
+                     type="text" id="features" name="features" class="form-control" value="{{calories}}" readonly></span>
+               </div>
+               <hr>
+               <h5 class="card-title text-status-darkpink-admin ">Pick a Day</h5>
+               <div id="accordion">
+                  <div class="container-fluid">
+                     <div class="text-center">
+                  {{#each days}}
+                  <div class="card">
+                     <div class="card-header" id="{{name}}">
+                        <h5 class="mb-0">
+                           <button type="button" class="btn accordion-days" data-toggle="collapse"
+                              data-target="#collapse{{@index}}" aria-expanded="true" aria-controls="collapse{{@index}}">
+                              {{name}}
+                           </button>
+                        </h5>
+                     </div>
+                     <div id="collapse{{@index}}" class="collapse" aria-labelledby="name"
+                        data-parent="#accordion" style="">
+                        <div class="jumbotron">
+                           <div class="row" style="justify-content: center;">
+                              {{#each value}}
+                              <div class="col-xs-6 col-sm-3 col-lg-2 card border my-1 mx-1 text-center" id="{{@index}}">
+                                 <div id="{{_id}}" name="plates">
+                                    <div class="img-altura-minima">
+                                       <img id="preview" class="mt-2"
+                                          src="data:image/{{img.contentType}};base64,{{formatImg img.data}}"
+                                          style="max-height: 150px; width:100%; min-height:150px;border-radius:25px" alt=""
+                                          style="">
+                                    </div>
+                                   <hr>
+                        <div style="min-height:115px; max-height:120px">
+                                    <div id="ft" class="text-status-darkpink-edit text-center">{{food_type}}</div>
+                                    <div class="text-pink dash-status-style-diet text-center">Title: </div>
+                                    
+                                    <div id="title" class="blackstyle" name="title"
+                                       class="form-control ">{{title}}
+                                       </div>
+                                        </div>
+                                  <hr>
+                                    <div style="min-height: 50px; max-height:50px">
+                                          <div class="text-pink dash-status-style-diet text-center">Calories: </div>
+                                          <div class="blackstyle" id="calories"
+                                             name="calories">{{calories}}</div>
+                                    </div>
+                                   <hr>
+                                 </div>
+                              </div>
+                              {{/each}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  {{/each}}
+                  </div>
+                  </div>
+                  <!-- MODAL -->
+                  <div id="modal" class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
+                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="return" style="align-items: center!important">
+
+                        </div>
+                     </div>
+                  </div>
+                  <!-- MODAL -->
+               </div>
+           
+            <div class="text-center mt-2 btn-cancel">
+               <div class="col-12">
+                  <button type="button" class="btn btn-pink-float mt-2 rounded"><a href="/admin"
+                        class="text-white">Go back</a></button>
+               </div>
+            </div>
+      {{!-- <script>
+         var newPlate = {{{ json altPlates}}}
+         function changePlate(id, ft) {
+            let lacosa = document.getElementById('return')
+            removeAllChildNodes(lacosa)
+            var oldPlate = document.getElementById(id)
+            var arr = []
+            for (let i = 0; i < {{{ json altPlates.length }}}; i++) {
+            if ({{{ json altPlates }}}[i]._id !== id && {{{ json altPlates }}}[i].food_type === ft) {
+            arr.push({{{ json altPlates }}}[i])
+               }
+            }
+            arr.forEach(a => {
+               var anchor = document.createElement('a')
+               anchor.classList.add("btn", "btn-secondary", "my-1", "mx-1", "list-group-item", "list-group-item-action", "border", "list-group-size")
+               let title = document.createElement('span');
+               title.innerText = a.title + " - ";
+               anchor.appendChild(title)
+               let calories = document.createElement('span');
+               calories.innerText = "Kcal:" + a.calories;
+               anchor.appendChild(calories)
+               let br = document.createElement('br')
+               anchor.appendChild(calories)
+               anchor.appendChild(br)
+               document.getElementById("return").appendChild(anchor)
+               anchor.addEventListener('click', function () {  
+                  replacePlate(a, oldPlate)
+               }, false);
+            })
+         }
+
+         function replacePlate(a, oldPlate) {
+            oldPlate.id = a._id
+            var textTitle = a.title
+            let img = oldPlate.querySelector("#preview")
+            let title = oldPlate.querySelector("#title")
+            let ft = oldPlate.querySelector("#ft")
+            let calories = oldPlate.querySelector("#calories")
+            img.alt = 'no image uploaded for this plate'
+            if (a.img) {
+               img.src = "data:image/" + a.img.contentType + ";base64," + a.img.data
+            } else {
+               img.src = '';
+            }
+            title.innerText = a.title
+            ft.innerText = a.food_type
+            calories.innerText = a.calories
+            $('#modal').modal('hide');
+         }
+
+         function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+               parent.removeChild(parent.firstChild);
+            }
+         }
+            
+         function updateDiet(){
+            const dia = {
+                  name: ' ',
+                  value: []
+            }
+            var diaNuevo = false
+            var updatedDays = []
+            aux = document.getElementsByName('plates')
+            let j = 0
+            var diax = Object.create(dia)
+            
+
+            for (let i = 0; i < aux.length ; i++) {
+               if (aux[i].parentElement.id == 0 ) {
+                  diaNuevo=true
+                  if(diax.name != ' ' || i == 0 ){ 
+                  var diaAux = Object.create(dia)   
+                  diaAux.name = diax.name
+                  diaAux.value = diax.value
+                  diax.value =[]
+                  j++
+                  if(i != 0){updatedDays.push(diaAux)}
+                  }
+               } 
+
+               if (diaNuevo){
+                  diax.name = 'Day '+j
+                  diax.value.push(aux[i].id)
+                  diaNuevo = false
+               } else {
+                  diax.value.push(aux[i].id)
+                  if( i == aux.length-1){updatedDays.push(diax)} 
+               }
+                
+            }
+            document.getElementById('updatedDays').value = JSON.stringify(updatedDays)
+         }
+      </script> --}}

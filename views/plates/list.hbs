@@ -1,0 +1,202 @@
+<nav class="navbar navbar-expand navbar-dark fixed-top nav-top-dashboard max-height-navbar" style="">
+    <a href="#menu-toggle" id="menu-toggle" class="navbar-brand">
+        <span class="logomove">
+            <img src="img/mypt_logo_vector.svg" class="img-fluid dash-logo-nav " style="" />
+        </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+        aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active dash-text-home">
+                <a class="nav-link dash-text-home text-light" href="/"><b>Home MyPT</b><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0"></form>
+    </div>
+</nav>
+<div id="wrapper" class="text-center">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav pt-5">
+            <li><a href="/admin" class="text-status-darkpink-sidebar bb">Admin Dashboard</a></li>
+            <hr>
+            <li><a href="users/logout" class="text-pink-sidebar">Logout</a></li>
+        </ul>
+    </div>
+
+
+    <div class="mt-5 pt-5" id="myBtnContainer">
+        <button class="btn  btn-secondary active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn btn-secondary" onclick="filterSelection('Breakfast')"> Breakfast</button>
+        <button class="btn btn-secondary" onclick="filterSelection('Meal')"> Meal</button>
+        <button class="btn btn-secondary" onclick="filterSelection('Snack')"> Snack</button>
+    </div>
+
+    <div> <a href="/plates/add" class="btn btn-light mb-2 btn-add">
+                    Add plate
+                </a></div>
+
+    <!-- Portfolio Gallery Grid -->
+
+    <div class="row" style="padding:0px">
+        {{#if plates}}
+        {{#each plates}}
+
+        <div class="col-lg-3 col-sm-6 card {{food_type}} column border border-dark border-radius my-1" alt="{{food_type}}">
+                <div class="content">
+            <img class="card-img-top mt-1" src="data:image/{{img.contentType}};base64,{{formatImg img.data}}"
+                alt="Alt for image" style="max-height: 150px; width:100%; min-height:150px;border-radius:25px">
+
+
+            <div style="min-height:100px;">
+                <hr>
+                <div class="text-pink-plate">
+                    {{food_type}}
+                </div>
+                <h5 class="card-title text-darkpink-modal ">
+                    {{title}}
+                </h5>
+            </div>
+            <hr>
+            <p class="text-pink-plate">Calories:
+                <span class="text-dark">{{calories}}</span>
+            </p>
+            <hr>
+
+            <div class="text-center" style="margin-bottom: 0px;">
+                <div style="100px">
+                    <button type="button" class="btn btn-light mb-2 btn-add" data-toggle="modal"
+                        data-target="#exampleModalLong{{@index}}">
+                        Show details
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong{{@index}}" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title title-food text-pink" id="exampleModalLongTitle">
+                            {{title}}</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card mb-3">
+                            <img class="card-img-top" src="data:image/{{img.contentType}};base64,{{formatImg img.data}}"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <div class="text-darkpink-modal">Calories:
+                                    <span class="blackstyle-modal">
+                                        {{calories}}</span>
+                                </div>
+                                <p class="card-text text-darkpink-modal">
+                                    Items: <span class="blackstyle-modal">{{items}}</span>
+                                </p>
+                                <p class="card-text text-darkpink-modal">
+                                    Directions: <span class="blackstyle-modal">{{directions}}</span>
+                                </p>
+                                <p class="card-text text-darkpink-modal">
+                                    Tips: <span class="blackstyle-modal">{{tips}}</span>
+                                </p>
+                                <p class="card-text text-darkpink-modal">
+                                    Meal: <span class="blackstyle-modal">{{food_type}}</span>
+                                </p>
+                                <p class="card-text text-darkpink-modal">
+                                    Diet: <span class="blackstyle-modal">{{diet_type}}</span>
+                                </p>
+                                <p class="card-text text-darkpink-modal">
+                                    Cuisine: <span class="blackstyle-modal">{{cuisine}}</span>
+                                </p>
+                                <p class="card-text text-darkpink-modal">
+                                    Prep Time: <span class="blackstyle-modal">{{prep}}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        {{/each}}
+        {{else}}
+        <p>You have no plates added.</p>
+        {{/if}}
+
+
+
+
+        <!-- END GRID -->
+    </div>
+
+
+
+<script>
+
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+
+</script>

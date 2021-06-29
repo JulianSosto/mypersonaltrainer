@@ -1,0 +1,737 @@
+<style>
+    body {
+        background: rgb(238, 174, 202);
+        background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+        font-family: Lato !important;
+    }
+
+    .card-img-top {
+        min-height: 333px;
+    }
+
+</style>
+
+<nav class="navbar navbar-expand navbar-dark fixed-top nav-top-dashboard max-height-navbar" style="">
+    <a href="#menu-toggle" id="menu-toggle" class="navbar-brand">
+        <span class="logomove">
+            <img src="img/mypt_logo_vector.svg" class="img-fluid dash-logo-nav" style="" />
+        </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+        aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active dash-text-home">
+                <a class="nav-link dash-text-home" href="/"><b>Home MyPT</b><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0"></form>
+    </div>
+</nav>
+<div id="wrapper" class="">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav mt-5 pt-5">
+            <li><a href="#" class="text-status-darkpink-sidebar bb">My Profile</a></li>
+            <hr>
+            <li><a href="#mydiets" class="text-status-darkpink-sidebar bb">My Diets</a></li>
+            <hr>
+            <li><a href="#workouts" class="text-status-darkpink-sidebar bb">My WorkOuts</a></li>
+            <hr>
+            <li><a href="#accountdetails" class="text-status-darkpink-sidebar bb">Account details</a></li>
+            <hr>
+            <li><a href="users/logout" class="text-pink-sidebar">Logout</a></li>
+            <hr>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="mt-5 pt-4">
+            <!-- Jumbotron: My Profile -->
+            <div class="jumbotron text-center">
+                <div><img src="img/mypt_logo_vector.svg" class="img-fluid" style="" /></div>
+                <h1 class="dark-text-titleh1">My Profile</h1>
+                <hr>
+                <h3 class="welcome">
+                    Welcome {{name}}
+                </h3>
+
+                <hr class="my-3" />
+
+                <div class="bg-light text-center">
+                    <h1 class="dark-text-titleh1">My Diets</h1>
+                    <hr class="my-3" />
+                    <div class="card">
+                        <div class="card-body container-fluid" style="">
+                            <span class=" features-dash text-pink mt-1">Features:</span>
+                            <span class="mb-2 text-dark dash-status-style"><b>{{diet_features}}</b></span><br>
+                            <span class=" features-dash text-pink mt-1"> Name:</span>
+                            <span class="mb-2 text-dark dash-status-style"><b>{{diet_name}}</b></span><br>
+                            <span class=" features-dash text-pink mt-1"> Calories:</span>
+                            <span class="mb-2 text-dark dash-status-style"><b>{{diet_calories}}</b></span><br>
+                            <hr />
+                            <h5 class="card-title text-status-darkpink-admin"></h5>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- container mobile calendar day-->
+                <div class="calendar-mobile" style="text-decoration: none; color: black">
+
+
+                    <!-- Modal mobile calendar day -->
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-pink text-darkpink-calendar" id="exampleModalLabel1">Days Diet</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                
+                                    <ul class="list-group text-center" style="">
+                                        {{#each days}}
+                                
+                                        <a class="list-group-item plate-calendar-move" id="{{_id}}" onclick="selectDay('{{name}}')" type="button" class="close" data-dismiss="modal">
+                                            {{name}}<br>
+                                        </a>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+            
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Modal mobile  -->
+
+                    <div class="col-12 card mt-2" id="dayshow">
+                        <div class="modal-body text-center" id="modalBody">
+                           
+
+                            <div class="card">
+                                <div class="col-6" id="card-img"></div>
+                                <div class="col-6" id="data"></div>
+                            </div>
+                            
+                        </div>
+
+                        <!--button pick a day --->
+
+                        
+                    </div>
+                    <button type="button" class="btn btn-pink text-light my-2" data-toggle="modal"
+                            data-target="#exampleModal1">
+                            Pick a day
+                        </button>
+                </div>
+                <!-- fin container mobile calendar -->
+
+                <div id="mydiets"></div>
+                <!-- Carousel calendar desktop-->
+                <div id="carouselExampleIndicators" class="carousel slide carousel-calendar mt-4" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="border-radius: 15px;">
+                            <div class="wrapper-calendar border border-rounded" id="weekdiet">
+
+                            </div>
+
+                        </div>
+                        <div class="carousel-item">
+                            <div class="wrapper-calendar">
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="wrapper-calendar">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- button next y previous carousel -->
+
+
+                    <div class="row">
+                        <div class="my-2 col-12 text-center botonera">
+                            <div class="btn-toolbar mb-3 text-center d-block" role="toolbar"
+                                aria-label="Toolbar with button groups">
+                                <div class="btn-group  " role="group" aria-label="First group">
+                                    <button type="button"
+                                        class="btn btn-nextback text-light btn-left index-btn-size border border-light"
+                                        data-target="#carouselExampleIndicators" data-slide-to="prev">Last Week</button>
+                                    <button type="button"
+                                        class="btn btn-nextback text-light btn-left index-btn-size border border-light"
+                                        data-target="#carouselExampleIndicators" data-slide-to="next">Next Week</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FIN Carousel calendar desktop-->
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--# /Jumbotron -->
+
+    <!-- Jumbotron: My WorkOuts -->
+    <div class="jumbotron text-center">
+        <h1 class="display-4 dash-workout" id="workouts">My WorkOuts</h1>
+        <h3>Videos</h3>
+
+        <hr class="my-3" />
+        <h3>Cosmetic Surgeries and Performance</h3>
+        <div class="container">
+            <div class="mt-5 text-center">
+                <div class="fb-video"
+                    data-href="https://www.facebook.com/mypersonaltrainermalta/videos/4420173384719372/"
+                    data-show-text="false" data-width="">
+                    <blockquote cite="https://developers.facebook.com/mypersonaltrainermalta/videos/4420173384719372/"
+                        class="fb-xfbml-parse-ignore"><a
+                            href="https://developers.facebook.com/mypersonaltrainermalta/videos/4420173384719372/">The
+                            Art &amp; Science of good butts</a>
+                        <p></p>Publicado por <a href="https://www.facebook.com/mypersonaltrainermalta/">My
+                            Personal Trainer</a> en Miércoles, 30 de septiembre de 2020
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Jumbotron: Account Details -->
+     <div class="jumbotron text-center mt-4" id="accountdetails">
+        <h1 class="display-4 dash-workout" id="">My Account Details</h1>
+        <hr class="my-3" />
+        <form action="/users/edit/{{_id}}?_method=PUT" method='POST'>
+            <input type="hidden" name="_method" value="PUT">
+            <div class="dash-status-style-diet">
+                User name:
+                <input type="name" id="name" name="name" class="form-control text-center mx-auto" value="{{name}}"
+                    style="max-width: 500px;" />
+            </div>
+            <div class="dash-status-style-diet">
+                E-mail:
+                <input type="email" id="email" name="email" class="form-control text-center mx-auto" value="{{email}}"
+                    style="max-width: 500px;" />
+            </div>
+            <input type="submit" class="btn btn-light my-2 btn-pink text-light" value="Edit account details" disabled>
+        </form>
+        <div class="card-body">
+            {{!-- <b>Choose an alphanumeric password.</b>
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="password">Enter your current password.</label>
+                    <input type="password" id="password" name="password" class="form-control text-center mx-auto"
+                        placeholder="Enter Password" style="max-width: 500px;" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Enter your new password.</label>
+                    <input type="password" id="newpassword1" name="newpassword1"
+                        class="form-control text-center mx-auto" placeholder="Enter Password"
+                        style="max-width: 500px;" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Repeat your new password.</label>
+                    <input type="password" id="newpassword2" name="newpassword2"
+                        class="form-control text-center mx-auto" placeholder="Enter Password"
+                        style="max-width: 500px;" />
+                </div> --}}
+                <a href="/users/changepass/{{_id}}" class="btn btn-light mb-2 btn-pink text-light">Change your password</a>
+        </div>
+    </div>
+    <!--# /Jumbotron -->
+</div>
+</div>
+<!-- /#page-content-wrapper -->
+</div>
+
+
+<!-- // Carousel calendar end-->
+<!-- Modal Calendar -->
+
+<div class="modal fade" id="exampleModalDay" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-pink text-darkpink-calendar" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center" id="modalBody">
+                <div>
+                    <img src="" class="card-img-top" alt="" id="img-modal-calendar">
+                </div>
+                <div>
+                    <span class="modal-plate-calendar">Food Type: </span>
+                    <span class="text-darkpink-calendar" id="foodtype-modal-calendar"></span>
+                </div>
+                <div>
+                    <span class=" modal-plate-calendar">Directions: </span>
+                    <span class="text-darkpink-calendar" id="directions-modal-calendar"></span>
+                </div>
+                <div>
+                    <span class="modal-plate-calendar">Calories: </span>
+                    <span class="text-darkpink-calendar" id="calories-modal-calendar"></span>
+                </div>
+
+                <div>
+                    <span class="modal-plate-calendar">Items: </span>
+                    <span class="text-darkpink-calendar" id="items-modal-calendar"></span>
+                </div>
+                <div>
+                    <span class="modal-plate-calendar">Tips: </span>
+                    <span class="text-darkpink-calendar" id="tips-modal-calendar"></span>
+                </div>
+                <div>
+                    <span class="modal-plate-calendar">Time of preparation: </span>
+                    <span class="text-darkpink-calendar" id="preparation-modal-calendar"></span>
+                </div>
+                <div>
+                    <span class="modal-plate-calendar">Type of cuisine: </span>
+                    <span class="text-darkpink-calendar" id="cuisine-modal-calendar"></span>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<!-- facebook -->
+{{!-- <div id="fb-root"></div> --}}
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
+    nonce="dTVDPeyQ"></script>
+<!-- Javascript -->
+
+<script>
+
+    /*function viewPlate(id) {
+        // let lacosa = document.getElementById('return')
+        //removeAllChildNodes(lacosa)
+        var dias = {{{ json days }}}
+        var match = false
+        for (let i = 0; i < dias.length; i++) {
+            var platos = dias[i].value
+            for (let j = 0; j < platos.length; j++) {
+                if (id == platos[j]._id) {
+                    showPlate(platos[j])
+                    match = true
+                    break
+                }
+            }
+            if (match) {
+                break
+            }
+        }
+    }*/
+    
+//MOSTRAR PLATO EN MODAL //
+    function showPlate(arr)
+    {
+                var cardbody = document.createElement('div')
+                cardbody.classList.add("card-body")
+                var row =  document.createElement('div')
+                row.classList.add("row")
+                var divClass = document.createElement('div')
+                divClass.classList.add("col-12", "card border","my-1","mx-1")
+                var img = document.createElement('img')
+                img.classList.add("mt-1","card-img-top")
+                img.alt = 'no image uploaded for this plate'
+                if (arr.img) {
+                    img.src = "data:image/" +arr.img.contentType + ";base64," +arr.img.data
+                } else {
+                    img.src = '';
+                } 
+
+                var spanft =  document.createElement('span')
+                spanft.innerText = arr.food_type
+                spanft.classList.add("text-status-darkpink-edit", "text-center")
+                spanft.classList.add("text-pink", "dash-status-style-diet", "text-center")
+                var spanTitle =  document.createElement('span')
+                spanTitle.innerText = arr.title
+                spanTitle.classList.add("text-status-darkpink-edit", "text-center")
+                var spanCalories =  document.createElement('span')
+                spanCalories.innerText='Calories: '
+                spanCalories.classList.add("text-status-darkpink-edit","text-center")
+                var calories =  document.createElement('span')
+                calories.innerText=arr.calories
+                calories.classList.add("text-pink", "dash-status-style-diet", "text-center")
+                var spanDirections =  document.createElement('span')
+                spanDirections.innerText= "Directions:"
+                spanDirections.classList.add("text-status-darkpink-edit", "text-center")
+                var directions =  document.createElement('span')
+                directions.innerText=arr.directions
+                directions.classList.add("text-pink", "dash-status-style-diet", "text-center")
+                var items =  document.createElement('span')
+                items.innerText=arr.items
+                items.classList.add("text-pink", "dash-status-style-diet", "text-center")
+                var tips =  document.createElement('span')
+                tips.innerText=arr.tips
+                tips.classList.add("text-pink", "dash-status-style-diet", "text-center")
+                /*var spanCuisine =  document.createElement('span')
+                spanCuisine.innerText= "Cuisine:"
+                spanCuisine.classList.add("text-status-darkpink-edit", "text-center")
+                var cuisine =  document.createElement('span')
+                cuisine.innerText=arr.cuisine
+                cuisine.classList.add("text-pink", "dash-status-style-diet", "text-center")*/
+                let br = document.createElement('br')
+                let br1 = document.createElement('br')
+                let br2 = document.createElement('br')
+                let br3 = document.createElement('br')
+                let br4 = document.createElement('br')
+                
+
+                divClass.appendChild(img)
+                divClass.appendChild(br)
+                divClass.appendChild(spanTitle)
+                divClass.appendChild(br1)
+                divClass.appendChild(spanCalories)
+                divClass.appendChild(calories)
+                divClass.appendChild(br2)
+                divClass.appendChild(items)
+                divClass.appendChild(br3)
+                divClass.appendChild(spanDirections)
+                divClass.appendChild(br4)
+                divClass.appendChild(directions)
+                divClass.appendChild(tips)
+                //divClass.appendChild(spanCuisine)
+            // divClass.appendChild(cuisine)
+                row.appendChild(divClass)
+                cardbody.appendChild(row)
+                document.getElementById("return").appendChild(cardbody)
+    }
+
+    function removeAllChildNodes(parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+
+</script>
+
+
+
+<script>
+
+
+//CALENDAR DESKTOP //
+var day = {{{ json days }}};
+            var i = 0
+             const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+                ];
+
+
+// CALENDAR MOBILE - 2 COLUMNAS - 1 IMAGEN, OTRA DIETA Y TIPE OF FOOD
+function julian () {
+
+var inicio = new Date()
+inicio.setDate(21)
+var currentDay = new Date()
+    
+for (let plato of day[currentDay.getDate() - inicio.getDate()].value){
+  
+    var dayShow = document.getElementById("dayshow")
+
+    var cardDay = document.createElement("div")
+        cardDay.classList.add("pink-card-mobile", "my-1", "row")
+        cardDay.id = plato._id
+
+    var data = document.createElement("div")
+        data.classList.add("col-6")
+        data.style.padding = "0px"
+
+    var title = document.createElement('div')
+        title.classList.add ("title-day-calendar", "my-1", "title-plate-calendar-mobile")
+        title.innerText = plato.title
+        title.dataset.target = "#exampleModalDay"
+        title.dataset.toggle = "modal"
+
+    var cardimg = document.createElement("div")
+        cardimg.classList.add("col-6", "my-1")
+        cardimg.style.margin = "0px"
+        cardimg.style.padding = "5px"
+        cardimg.style.borderRadius = "15px"
+        cardimg.dataset.target = "#exampleModalDay"
+        cardimg.dataset.toggle = "modal"
+
+        var img = document.createElement('img')
+        img.classList.add("card-img-top","img-day-calendar")
+        img.alt = 'no image uploaded for this plate'
+
+        if (plato.img) {
+            img.src = "data:image/" +plato.img.contentType + ";base64," +plato.img.data
+        } else {
+            img.src = '';
+        } 
+        
+        var foodtype = document.createElement('div')
+        foodtype.classList.add ("ftype-calendar-mobile")
+        foodtype.innerHTML = plato.food_type 
+        foodtype.dataset.target = "#exampleModalDay"
+        foodtype.dataset.toggle = "modal"
+
+        foodtype.addEventListener("click", function showModalDietMobile(){
+        document.getElementById("exampleModalLabel").innerText = plato.title
+        document.getElementById("img-modal-calendar").src = "data:image/" + plato.img.contentType + ";base64," + plato.img.data
+        document.getElementById("foodtype-modal-calendar").innerText = plato.food_type       
+        document.getElementById("calories-modal-calendar").innerText = plato.calories
+        document.getElementById("directions-modal-calendar").innerText = plato.directions
+        document.getElementById("items-modal-calendar").innerText = plato.items
+        document.getElementById("tips-modal-calendar").innerText = plato.tips
+        document.getElementById("preparation-modal-calendar").innerText = plato.prep
+        document.getElementById("cuisine-modal-calendar").innerText = plato.cuisine
+                            })
+
+        cardDay.addEventListener("click", function showModalDietMobile(){
+        document.getElementById("exampleModalLabel").innerText = plato.title
+        document.getElementById("img-modal-calendar").src = "data:image/" + plato.img.contentType + ";base64," + plato.img.data
+        document.getElementById("foodtype-modal-calendar").innerText = plato.food_type       
+        document.getElementById("calories-modal-calendar").innerText = plato.calories
+        document.getElementById("directions-modal-calendar").innerText = plato.directions
+        document.getElementById("items-modal-calendar").innerText = plato.items
+        document.getElementById("tips-modal-calendar").innerText = plato.tips
+        document.getElementById("preparation-modal-calendar").innerText = plato.prep
+        document.getElementById("cuisine-modal-calendar").innerText = plato.cuisine
+        })
+
+        title.addEventListener("click", function showModalDietMobile(){
+        document.getElementById("exampleModalLabel").innerText = plato.title
+        document.getElementById("img-modal-calendar").src = "data:image/" + plato.img.contentType + ";base64," + plato.img.data
+        document.getElementById("foodtype-modal-calendar").innerText = plato.food_type       
+        document.getElementById("calories-modal-calendar").innerText = plato.calories
+        document.getElementById("directions-modal-calendar").innerText = plato.directions
+        document.getElementById("items-modal-calendar").innerText = plato.items
+        document.getElementById("tips-modal-calendar").innerText = plato.tips
+        document.getElementById("preparation-modal-calendar").innerText = plato.prep
+        document.getElementById("cuisine-modal-calendar").innerText = plato.cuisine
+        })
+
+        cardDay.appendChild(cardimg)
+        cardDay.appendChild(data)
+        data.appendChild(title)
+        data.appendChild(foodtype)
+        cardimg.appendChild(img)
+        dayShow.appendChild(cardDay)
+}
+}
+
+julian()
+
+// FIN - CALENDAR MOBILE - 2 COLUMNAS - 1 IMAGEN, OTRA DIETA Y TIPE OF FOOD
+
+
+
+
+//CALENDAR DESKTOP........ 
+
+    for (const d of day) {  
+            var div = document.createElement("div");
+            div.classList.add("pink-card")
+
+            //PDATE es la fecha en calendar desktop
+            var pDate = document.createElement("p")
+            pDate.classList.add("day-calendar", "text-light", "h2")
+
+            var today = new Date();
+            
+            
+            pDate.innerHTML = (today.getDate() + i) + "/" + monthNames[today.getMonth()]
+            i++
+
+            monthNames[today.getMonth()]
+            div.appendChild(pDate)
+
+            var hr = document.createElement("hr")
+            div.appendChild(hr)
+        
+
+            hr.style.marginBottom = "2px"
+
+            var divDate = document.createElement("div")
+            divDate.classList.add("div-day-calendar")
+
+            var modalDay = document.createElement("div")
+            modalDay.classList.add("modal", "fade", "bd-example-modal-lg")
+            modalDay.innerText = "Show details"
+            div.appendChild(modalDay)
+
+            for (let plato of d.value) {
+                
+                var plate = document.createElement("a");
+
+                plate.dataset.target = "#exampleModalDay"
+                plate.dataset.toggle = "modal"
+                plate.classList.add("div-plate-calendar")
+                plateItems = plato.items
+                
+
+                plate.addEventListener("click", function showModalDiet() {
+                  
+                    document.getElementById("exampleModalLabel").innerText = plato.title
+                    document.getElementById("img-modal-calendar").src = "data:image/" + plato.img.contentType + ";base64," + plato.img.data
+                    document.getElementById("foodtype-modal-calendar").innerText = plato.food_type       
+                    document.getElementById("calories-modal-calendar").innerText = plato.calories
+                    document.getElementById("directions-modal-calendar").innerText = plato.directions
+                    document.getElementById("items-modal-calendar").innerText = plato.items
+                    document.getElementById("tips-modal-calendar").innerText = plato.tips
+                    document.getElementById("preparation-modal-calendar").innerText = plato.prep
+                    document.getElementById("cuisine-modal-calendar").innerText = plato.cuisine
+                    
+                })
+              
+                
+                var p = document.createElement("p")
+                p = plato.title
+                plate.innerHTML = p;
+                var hr2 = document.createElement("hr");
+                hr2.classList.add("hr2")
+
+                plate.appendChild(hr2)
+                div.appendChild(plate)
+            }
+            document.getElementById("weekdiet").appendChild(div)
+        }
+
+function removeAllChildNodes(parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+
+// Calendar mobile Show plate
+function selectDay(nombreDia){
+    var dayShow = document.getElementById("dayshow")
+   removeAllChildNodes(dayShow)
+            for (const d of day) {        
+                    if (d.name === nombreDia) {
+                        for (let plato of d.value){
+                            var br = document.createElement("br")
+                            var cardDay = document.createElement("div")
+                            cardDay.classList.add("pink-card-mobile", "my-1", "row")
+                            cardDay.id = plato._id
+                                cardDay.dataset.target = "#exampleModalDay"
+                            cardDay.dataset.toggle = "modal"
+                            cardDay.addEventListener("click", function showModalDietMobile(){
+                                document.getElementById("exampleModalLabel").innerText = plato.title
+                                document.getElementById("img-modal-calendar").src = "data:image/" + plato.img.contentType + ";base64," + plato.img.data
+                                document.getElementById("foodtype-modal-calendar").innerText = plato.food_type       
+                                document.getElementById("calories-modal-calendar").innerText = plato.calories
+                                document.getElementById("directions-modal-calendar").innerText = plato.directions
+                                document.getElementById("items-modal-calendar").innerText = plato.items
+                                document.getElementById("tips-modal-calendar").innerText = plato.tips
+                                document.getElementById("preparation-modal-calendar").innerText = plato.prep
+                                document.getElementById("cuisine-modal-calendar").innerText = plato.cuisine
+                            })
+                            
+                            var data = document.createElement("div")
+                            data.classList.add("col-6")
+                            data.style.padding = "0px"
+
+                            var title = document.createElement('div')
+                            title.classList.add ("title-day-calendar", "my-1", "title-plate-calendar-mobile")
+                            title.innerText = plato.title
+                            title.dataset.target = "#exampleModalDay"
+                            title.dataset.toggle = "modal"
+
+                            title.addEventListener("click", function showModalDietMobile(){
+                                document.getElementById("exampleModalLabel").innerText = plato.title
+                                document.getElementById("img-modal-calendar").src = "data:image/" + plato.img.contentType + ";base64," + plato.img.data
+                                document.getElementById("foodtype-modal-calendar").innerText = plato.food_type       
+                                document.getElementById("calories-modal-calendar").innerText = plato.calories
+                                document.getElementById("directions-modal-calendar").innerText = plato.directions
+                                document.getElementById("items-modal-calendar").innerText = plato.items
+                                document.getElementById("tips-modal-calendar").innerText = plato.tips
+                                document.getElementById("preparation-modal-calendar").innerText = plato.prep
+                                document.getElementById("cuisine-modal-calendar").innerText = plato.cuisine
+                            })
+                            
+                            var cardimg = document.createElement("div")
+                            cardimg.classList.add("col-6", "my-1")
+                            cardimg.style.margin = "0px"
+                            cardimg.style.padding = "5px"
+                            cardimg.style.borderRadius = "15px"
+                            cardimg.dataset.target = "#exampleModalDay"
+                            cardimg.dataset.toggle = "modal"
+
+                            cardimg.addEventListener("click", function showModalDietMobile(){
+                                document.getElementById("exampleModalLabel").innerText = plato.title
+                                document.getElementById("img-modal-calendar").src = "data:image/" + plato.img.contentType + ";base64," + plato.img.data
+                                document.getElementById("foodtype-modal-calendar").innerText = plato.food_type       
+                                document.getElementById("calories-modal-calendar").innerText = plato.calories
+                                document.getElementById("directions-modal-calendar").innerText = plato.directions
+                                document.getElementById("items-modal-calendar").innerText = plato.items
+                                document.getElementById("tips-modal-calendar").innerText = plato.tips  
+                                document.getElementById("preparation-modal-calendar").innerText = plato.prep
+                                document.getElementById("cuisine-modal-calendar").innerText = plato.cuisine
+                            })
+
+                            var img = document.createElement('img')
+                            img.classList.add("card-img-top","img-day-calendar")
+                            img.alt = 'no image uploaded for this plate'
+
+                            if (plato.img) {
+                                img.src = "data:image/" +plato.img.contentType + ";base64," +plato.img.data
+                            } else {
+                                img.src = '';
+                            } 
+                            
+                            var foodtype = document.createElement('div')
+                            foodtype.classList.add ("ftype-calendar-mobile")
+                            foodtype.innerHTML = plato.food_type 
+                            foodtype.dataset.target = "#exampleModalDay"
+                            foodtype.dataset.toggle = "modal"
+                            foodtype.addEventListener("click", function showModalDietMobile(){
+                                document.getElementById("exampleModalLabel").innerText = plato.title
+                                document.getElementById("img-modal-calendar").src = "data:image/" + plato.img.contentType + ";base64," + plato.img.data
+                                document.getElementById("foodtype-modal-calendar").innerText = plato.food_type  
+                                document.getElementById("directions-modal-calendar").innerText = plato.directions
+                                document.getElementById("items-modal-calendar").innerText = plato.items
+                                document.getElementById("tips-modal-calendar").innerText = plato.tips    
+                                document.getElementById("calories-modal-calendar").innerText = plato.calories
+                                document.getElementById("preparation-modal-calendar").innerText = plato.prep
+                                document.getElementById("cuisine-modal-calendar").innerText = plato.cuisine
+                            })
+
+                            cardDay.appendChild(cardimg)
+                            cardDay.appendChild(data)
+                            data.appendChild(title)
+                            data.appendChild(foodtype)
+                            cardimg.appendChild(img)
+                            dayShow.appendChild(cardDay)
+                        }
+                    }
+                }
+            }
+
+
+
+</script>

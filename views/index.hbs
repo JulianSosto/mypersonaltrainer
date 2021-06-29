@@ -1,0 +1,539 @@
+<div class="">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Go Top↑</button>
+<div class="">
+    <div class="collapse" id="navbarToggleExternalContent" style="min-height: 275px">
+        <div class="bg-light p-4">
+            <div class="text-pink h2 mb-2">My Personal Trainer</div>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item my-2" style="max-height: 40px;min-height:40px">
+                    <a class="text-status-darkpink-index-nav-move" href="#about_us" style="max-height: 40px;min-height:40px">About us <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item my-2" style="max-height: 40px;min-height:40px">
+                    <a class="text-status-darkpink-index-nav-move" href="#footer" style="max-height: 40px;min-height:40px">Contact <span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <hr>
+            <div class="text-muted">Tell us about you! Enter your user panel!</div>
+            {{#unless name}}
+            <span class="navbar-text">
+                <a class=" text-navlogin-darkpink mr-1" href="/users/login">Login </a>
+            </span>
+            <span>|</span>
+            <span>
+                <a class=" ml-1 text-navregister-darkpink" href="/users/register"> Register</a>
+            </span>
+            {{/unless}}
+            {{#if name}}
+            <span class="navbar-text">
+                <a class=" text-navlogin-darkpink mr-1" href="/dashboard">Dashboard </a>
+            </span>
+            <span>|</span>
+            <span>
+                <a class=" ml-1 text-navregister-darkpink" href="/users/logout"> Logout</a>
+            </span>
+            {{/if}}
+
+        </div>
+    </div>
+    <nav class="navbar navbar-dark nav-top-dashboard navbarheight">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="">
+                <img src="img/mypt_logo_vector.svg" class="img-fluid index-logo-nav" style=" " />
+            </span>
+        </button>
+    </nav>
+</div>
+<!--#fin navbar never expand - collapse-->
+<!-- Section-->
+<section class="section1" style="">
+    
+    <img src="img/lift.svg" class="img-fluid w-100" alt="Responsive image">
+    <div class="container">
+        <div class="row">
+            <div class="text-grey text-center mt-3 col-12">
+                Get your program for just €29.90/m
+            </div>
+        </div>
+        <div class="row">
+            <div class="my-2 col-12 text-center botonera">
+                <div class="btn-toolbar mb-3 text-center d-block" role="toolbar"
+                    aria-label="Toolbar with button groups">
+                    <div class="btn-group  " role="group" aria-label="First group">
+                        <button type="button" class="btn bg-pink text-dark btn-left index-btn-size"
+                            data-target="#carouselExampleIndicators" data-slide-to="0">MY Stats</button>
+                        <button type="button" class="btn bg-pink text-dark btn-left index-btn-size"
+                            data-target="#carouselExampleIndicators" data-slide-to="1">Gender</button>
+                        <button type="button" class="btn bg-pink text-dark index-btn-size "
+                            data-target="#carouselExampleIndicators" data-slide-to="2">My Goal</button>
+                        <button type="button" class="btn bg-pink text-dark index-btn-size"
+                            data-target="#carouselExampleIndicators" data-slide-to="3">Diet</button>
+                        <button type="button" class="btn bg-pink text-dark btn-right index-btn-size"
+                            data-target="#carouselExampleIndicators" data-slide-to="4">CheckOut!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h2 class="text-center text-pink col-12 mb-2 text-tell">
+                Tell us about you!
+            </h2>
+        </div>
+    </div>
+    
+    <form action="/checkout" method="POST">
+    
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripePublishableKey}}"
+            data-description="Your Diet by MyPTMalta" data-locale="auto">
+            </script>
+        <script>
+            // Hide default stripe button
+            document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+        </script>
+        <div class="container text-center align-middle">
+            <!--Tell us about you-->
+            <!--Slider-->
+            <div id="carouselExampleIndicators" class="carousel slide" style="min-height: 298px;">
+                <div class="carousel-inner">
+                    <!--Slider 0-->
+                    <div class="carousel-item active">
+                        <div id='stats' class="col-6 ml-auto mr-auto">
+                            <hr>
+                            <div class="text-status-darkpink-index ml-1">
+                                Age
+                            </div>
+                            <input type="number" id="age" name="age" class="form-control text-center" min="1"
+                                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                                value=" " />
+
+                            <div class="text-status-darkpink-index ml-1">
+                                Weight(Kg)
+                            </div>
+                            <input type="number" id="weight" name="weight" class="form-control text-center" min="1"
+                                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                                value=" " />
+
+                            <div class="text-status-darkpink-index ml-1">
+                                Height(cm)
+                            </div>
+                            <input type="number" id="height" name="height" class="form-control text-center" min="1"
+                                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                                value=" " />
+                            <div class="text-status-darkpink-index align-middle text-center">
+                                Activity
+                            </div>
+                            <select class="custom-select" id="activity" name="activity">
+                                <option selected>Choose</option>
+                                <option value="Light">Light</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="Active">Active</option>
+                                <option value="Active">Very Active</option>
+                            </select>
+                            <a href="#" role="button" data-target="#carouselExampleIndicators" data-slide-to="1">
+                                 <hr>
+                                <button type="button" id='nextSlide' class="form-control my-3 btn btn-pink">
+                                    Next
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!--Slider 1 genere-->
+                    <div class="carousel-item ">
+                        <div class="">
+                            <p class="lead">
+                                <input id="input_sex" name="input_sex" type="hidden" value=' '>
+                                <a id="sex" name="female" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators" data-slide-to="2"
+                                    data-value="female" onclick="sendValue(this)">
+                                    I'm a female</a>
+                                <a id="sex" name="male"  class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators" data-slide-to="2"
+                                    data-value="male" onclick="sendValue(this)">
+                                    I'm a male
+                                </a>
+                                <a id="sex" name="other" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators" data-slide-to="2"
+                                    data-value="other" onclick="sendValue(this)">
+                                    other
+                                </a>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img class="img-fluid" src="img/aboutyou.svg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!--Slider 2 -->
+                    <div class="carousel-item">
+                        <div class="">
+                            <p class="lead">
+                                <input id="input_goal" name="input_goal" type="hidden" value=' '>
+                                <a  id="goal" name="beginner" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators"
+                                    data-slide-to="3" onclick="sendValue(this)">Beginner
+                                    Fat Loss</a>
+                                <a  id="goal" name="extreme" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators"
+                                    data-slide-to="3" onclick="sendValue(this)">Extreme Fat
+                                    Loss</a>
+                                <a id="goal" name="leanmuscle" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators"
+                                    data-slide-to="3" onclick="sendValue(this)">Lean Muscle
+                                    Gain</a>
+                                <a id="goal" name="musclegain" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators"
+                                    data-slide-to="3" onclick="sendValue(this)">Muscle
+                                    Gain/Weight
+                                    Gain</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!--Slider 3 Diet-->
+                    <div class="carousel-item">
+                        <div class="">
+                            <p class="lead">
+                                <input id="input_diet" name="input_diet" type="hidden" value=' '>
+                                <a id="diet" name="normal" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators" data-slide-to="4"
+                                    onclick="sendValue(this)">Normal</a>
+                                <a id="diet" name="vegan" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators"
+                                    data-slide-to="4" onclick="sendValue(this)" >Vegan</a>
+                                <a id="diet" name="vegetarian" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators"
+                                    data-slide-to="4" onclick="sendValue(this)" >Vegetarian</a>
+                                <a id="diet" name="lactosefree/gluten" class="btn btn-light btn-lg d-block my-2 btn-slide-500"
+                                    href="#" role="button" data-target="#carouselExampleIndicators"
+                                    data-slide-to="4" onclick="sendValue(this)">Lactose Free/Gluten
+                                    Free</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!--Slider 4 Checkout-->
+                    <div class="carousel-item">
+                        <div class="">
+                            <p class="lead">
+                                <input id="input_subscription" name="input_subscription" type="hidden" value=''>
+                                <button id="subscription" type="submit"
+                                    class="btn btn-light btn-lg d-block my-2 btn-slide-500" value="102.40"
+                                    onclick="sendValue(this)">1 month
+                                    <span class="text-price-pink">€102.40</span></button>
+                                <button id="subscription" type="submit"
+                                    class="btn btn-light btn-lg d-block my-2 btn-slide-500" value="285.50"
+                                    onclick="sendValue(this)">3 month
+                                    <span class="text-price-pink">€285.50</span></button>
+                                <button id="subscription" type="submit"
+                                    class="btn btn-light btn-lg d-block my-2 btn-slide-500" value="285.50"
+                                    onclick="sendValue(this)">6 month
+                                    <span class="text-price-pink">€420.20</span></button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <!-- #fin Selectors -->
+    <!-- #fin Section-->
+    <!-- dialogue chat-->
+</section>
+<!-- Card Group-->
+
+<!-- -----------CAROUSEL SUCCESS STORIES------------- -->
+<div class="success-white" style="width: 100%;">
+    <div class="text-darkpink-sucess-podcast">
+        <h5 class="card-title text-darkpink-sucess-podcast text-center pt-3 mr-auto">Success Stories</h5>
+    </div>
+    <div class="text-center text-what-index mb-2">Sharlene Struggled and still achieved</div>
+
+
+    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="img/successtorie.svg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/st2.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/st3.jpg" alt="Third slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/st4.jpg" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="card-body">
+        <p class="card-text"></p>
+        <div class="text-what-index text-center">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+            </p>
+            <footer class="blockquote-footer mt-1">Someone famous in <cite title="Source Title">Source Title</cite>
+            </footer>
+        </div>
+    </div>
+
+    <!-- ------------what is MY PT------------ -->
+    <div class="container">
+        <div class="row card-what rounded text-center parallax" id="about_us">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="card-title text-what-title mt-5 text-center">What is MyPT?</div>
+                <div class="card-text pt-1 text-what-body mx-4">My <b>Personal Trainer</b> is the dream of making the
+                    fitness journey not only
+                    a success, but a life-changing event.</div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                <img src="img/whatismypt.svg" class="rounded mr-auto ml-auto my-3 whatmypt" alt="...">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------- PODCASTS----------- -->
+    <div class="card footer-grey" style="width: 100%;">
+        <div class="mt-5 text-center">
+           <div class="fb-video" data-href="https://www.facebook.com/mypersonaltrainermalta/videos/4420173384719372/" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/mypersonaltrainermalta/videos/4420173384719372/" class="fb-xfbml-parse-ignore"><a href="https://developers.facebook.com/mypersonaltrainermalta/videos/4420173384719372/">The Art &amp; Science of good butts</a><p></p>Publicado por <a href="https://www.facebook.com/mypersonaltrainermalta/">My Personal Trainer</a> en Miércoles, 30 de septiembre de 2020</blockquote></div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-center text-darkpink-sucess-podcast">Podcasts</h5>
+            <div class="text-darkpink-podcast-body">If you still haven't made up your mind we invite you to listen our
+                podcasts going live
+                every Wednesday where we talk about Fitness & Malta. <span class="text-pink">Tune in!</span></div>
+        </div>
+
+    </div>
+
+
+    <!-- Social Media Section-->
+    <div class="" style="background-color: white!important;">
+        <div class="">
+            <div class="pt-2 text-center text-pink-social my-2">
+                What are you waiting for?
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-light btn-lg py-2 btn-today"><a href="/dashboard"
+                        class="text-light btn-today"> Start your fitness journey
+                        today!</a>
+                </button>
+                        
+            </div> 
+            
+            <div class="text-grey py-2 text-center">
+                Follow us in social media
+            </div>
+        </div>
+        <div class="template-demo text-center pb-4">
+            <a href="https://www.facebook.com/mypersonaltrainermalta" class="mx-2">
+                <button type="button" class="btn btn-social-icon btn-outline-facebook" style="border-radius: 50%"><i
+                        class="fa fa-facebook"></i></button>
+            </a>
+            <a href="https://www.instagram.com/my_personal_trainer_malta/">
+                <button type="button" class="btn btn-social-icon btn-outline-instagram" style="border-radius: 50%"><i
+                        class="fa fa-instagram"></i></button>
+            </a>
+        </div>
+    </div>
+    <!-- #fin Social Media Section-->
+</div>
+
+<!-- ------------------------ -->
+<!-- # fin Card Group-->
+
+<!-- Footer -->
+<div class="container">
+<div id="footer" class="s">
+    <div class="row footer-grey-data pt-4 text-center">
+        <div class="col-sm-12 col-lg-4 py-2">
+            <b>Call us on:</b> <br/>
+            9962 7744 - 9965 8322 - 9932 8421
+        </div>
+        <div class="col-sm-12 col-lg-4 py-2">
+            <b>Miriam Saliba Registered Dietitian Malta</b><br/>
+            Matricule 3149183 Registered on 24/12/2014
+        </div>
+        <div class="col-sm-12 col-lg-4 py-2">
+            <b>All Rights Reserved MYPT Malta 2020</b> <br/>
+            Terms & Conditions - Privacy Policy
+        </div>
+    </div>
+</div>
+</div>
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
+    nonce="YAlLvphB">
+    </script>
+<script>
+
+    function sendValue(val) {
+        const nombrecampo = "input_" + val.id;
+        const input = document.getElementById(nombrecampo);
+        if (val.value === undefined) {
+            input.value = val.name;
+        } else {
+            input.value = val.value;
+        }
+    }
+
+    const age = document.getElementById('age');
+    const height = document.getElementById('height');
+    const weight = document.getElementById('weight');
+    const activity = document.getElementById('activity');
+    const btnNext = document.getElementById('nextSlide');
+
+    eventListeners();
+
+    function eventListeners() {
+        // Inicio de la aplicación y deshabilitar submit
+        document.addEventListener('DOMContentLoaded', inicioApp);
+        // Campos del formulario
+        age.addEventListener('blur', validarEdad);
+        height.addEventListener('blur', validarHeight);
+        weight.addEventListener('blur', validarWeight);
+        activity.addEventListener('blur', validarActivity);
+        activity.addEventListener('click', validarActivity);
+
+    }
+
+
+    // funciones
+    function inicioApp() {
+        // deshabilitar el envio
+        btnNext.disabled = true;
+    }
+
+
+    function validarEdad() {
+        validarLongitud(this)
+        if (age.value > 0 && age.value < 100) {
+            this.style.borderColor = 'green';
+            this.classList.remove('error');
+            if (document.getElementById('error-age')) {
+                document.getElementById('error-age').remove();
+            };
+        } else {
+            let div = showError();
+            div.innerHTML = 'Verify Age';
+            div.setAttribute('id', 'error-age');
+            if (!document.getElementById('error-age')) {
+                document.getElementById('stats').appendChild(div);
+            };
+            setTimeout(function () {
+                $('error-age').remove();
+            }, 3000);
+            this.style.borderColor = 'red';
+            this.classList.add('error');
+        }
+    }
+    function validarHeight() {
+        validarLongitud(this)
+        if (height.value > 0 && height.value < 250) {
+            this.style.borderColor = 'green';
+            this.classList.remove('error');
+            if (document.getElementById('error-height')) {
+                document.getElementById('error-height').remove();
+            }
+
+        } else {
+            let div = showError();
+            div.innerHTML = 'Verify Height';
+            div.setAttribute('id', 'error-height');
+            if (!document.getElementById('error-height')) {
+                document.getElementById('stats').appendChild(div);
+            };
+            this.style.borderColor = 'red';
+            this.classList.add('error');
+        }
+    }
+    function validarWeight() {
+        validarLongitud(this)
+        if (weight.value > 0 && weight.value < 300) {
+            this.style.borderColor = 'green';
+            this.classList.remove('error');
+            if (document.getElementById('error-weight')) {
+                document.getElementById('error-weight').remove();
+            }
+        } else {
+            let div = showError();
+            div.innerHTML = 'Verify Weight';
+            div.setAttribute('id', 'error-weight');
+            if (!document.getElementById('error-weight')) {
+                document.getElementById('stats').appendChild(div);
+            };
+            this.style.borderColor = 'red';
+            this.classList.add('error');
+        }
+    }
+    // Verifica la longitud del texto en los campos
+    function validarLongitud(campo) {
+        if (campo.value.length > 0) {
+            campo.style.borderBottomColor = 'green';
+            campo.classList.remove('error');
+        } else {
+            campo.style.borderBottomColor = 'red';
+            campo.classList.add('error');
+        }
+    }
+    function validarActivity() {
+        if (activity.value !== 'Choose') {
+            this.style.borderColor = 'green';
+            this.classList.remove('error');
+            if (document.getElementById('error-activity')) {
+                document.getElementById('error-activity').remove();
+            };
+        } else {
+            let div = showError();
+            div.innerHTML = 'Choose activity';
+            div.setAttribute('id', 'error-activity');
+            document.getElementById('stats').appendChild(div);
+            this.style.borderColor = 'red';
+            this.classList.add('error');
+        }
+        let errores = document.querySelectorAll('.error');
+
+        if (age.value !== '' && height.value !== '' && weight.value !== '' && activity.value !== 'Choose') {
+            if (errores.length === 0) {
+                btnNext.disabled = false;
+            }
+        }
+    }
+    function showError() {
+        let div = document.createElement('div')
+        div.classList.add('alert', 'alert-danger', 'alert-dismissible', 'fade', 'show')
+        return div;
+    }
+
+    //Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</div>

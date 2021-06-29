@@ -1,0 +1,281 @@
+<nav class="navbar navbar-expand navbar-dark fixed-top nav-top-dashboard max-height-navbar" style="">
+    <a href="#menu-toggle" id="menu-toggle" class="navbar-brand">
+        <span class="logomove">
+            <img src="img/mypt_logo_vector.svg" class="img-fluid dash-logo-nav " style="" />
+        </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+        aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active dash-text-home">
+                <a class="nav-link dash-text-home" href="/"><b>Home MyPT</b><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0"></form>
+    </div>
+</nav>
+<div id="wrapper" class="">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav mt-5">
+            <li><a href="/admin" class="text-status-darkpink-sidebar bb">Admin Dashboard</a></li>
+            <hr>
+            <li><a href="users/logout" class="text-pink-sidebar">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="container mt-5 pt-5 ">
+        <div class="row bg-light rounded">
+            {{> _messages}}
+            <div class="col-lg-6 col-sm-12 mt-auto mb-auto">
+                <img id="preview"  src="data:image/{{plate.img.contentType}};base64,{{formatImg plate.img.data}}"
+                    class="img-fluid w-100 h-100 rounded mt-2" alt="" style="">
+            </div>
+            <div class="col-lg-6 col-sm-12 my-2">
+                <!--FORM -->
+                <form action="{{plate._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_method" value="PUT">
+                    <!--img browse -->
+                    <div class="dash-status-style-edit text-pink">Image:</div>
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="file">Choose file</label>
+                        <input id="file" type="file" name="file" class="custom-file-input" accept="image/*" onchange="previewImage();">
+                    </div>
+                    <div>
+                        <!-- Title -->
+                        <div class="dash-status-style-edit text-pink">Title:</div>
+                        <span class="blackstyle">
+                            <input type="text" id="title" name="title" class="form-control" value="{{plate.title}}" onblur="checkValidator()" onclick="julian()">
+                        </span>
+
+                        <!-- directions -->
+                        <div class="dash-status-style-edit text-pink">Directions:</div>
+                        <textarea id="directions" name="directions" cols="30" rows="1" name="directions"
+                            class="form-control" aria-label="With textarea">{{plate.directions}}</textarea>
+
+                        <!-- calories -->
+                        <div class="dash-status-style-edit text-pink">Calories:</div>
+                        <span class="blackstyle">
+                            <input type="number" id="calories" name="calories" class="form-control"
+                                value="{{plate.calories}}">
+                        </span>
+                        <!-- items -->
+                        <div class="dash-status-style-edit text-pink">Items:</div>
+                        <span class="blackstyle">
+                            <input type="text" id="items" name="items" class="form-control"
+                                value="{{plate.items}}"></span>
+                        <div class="dash-status-style-edit text-pink">Tips:</div>
+                        <span class="blackstyle">
+                            <input type="text" id="tips" name="tips" class="form-control"
+                                value="{{plate.tips}}"></span>
+                        <!-- type of foods -->
+                        <div class="dash-status-style-edit text-pink">Type of food:</div>
+                        <div class="row bg-light">
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="food_type" id="inlineRadio1"
+                                        value="Breakfast" onclick="checkValidator()">
+                                    <label class="form-check-label  " for="inlineRadio1">Breakfast</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="food_type" id="inlineRadio2"
+                                        value="Meal">
+                                    <label class="form-check-label  " for="inlineRadio2">Meal</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="food_type" id="inlineRadio4"
+                                        value="Snack" onclick="checkValidator()">
+                                    <label class="form-check-label" for="inlineRadio4">Snack</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- type of diet -->
+                        <div class="dash-status-style-edit text-pink">Type of diet:</div>
+                        <div class="row bg-light ">
+
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline ">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type" id="inlineRadio5"
+                                        value="Normal" onclick="checkValidator()">
+                                    <label class="form-check-label" for="inlineRadio5">Normal</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type" id="inlineRadio6"
+                                        value="Vegetarian" onclick="checkValidator()">
+                                    <label class="form-check-label" for="inlineRadio6">Vegetarian</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type" id="inlineRadio7"
+                                        value="Vegan" onclick="checkValidator()">
+                                    <label class="form-check-label " for="inlineRadio7">Vegan</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type" id="inlineRadio8"
+                                        value="Gluten Free" onclick="checkValidator()">
+                                    <label class="form-check-label " for="inlineRadio8">Gluten Free</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type" id="inlineRadio9"
+                                        value="Lactose Free" onclick="checkValidator()">
+                                    <label class="form-check-label " for="inlineRadio9">Lactose free</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cuisine-->
+                        <div class="dash-status-style-edit text-pink">Cuisine:</div>
+                        <div class="row bg-light ">
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline ">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine" id="inlineRadio10"
+                                        value="Mexican" onclick="checkValidator()">
+                                    <label class="form-check-label  " for="inlineRadio10">Mexican</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine" id="inlineRadio11"
+                                        value="Maltese" >
+                                    <label class="form-check-label  " for="inlineRadio11">Maltese</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine" id="inlineRadio12"
+                                        value="Mediterranean" onclick="checkValidator()" >
+                                    <label class="form-check-label  " for="inlineRadio12">Mediterranean</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine" id="inlineRadio13"
+                                        value="Indian">
+                                    <label class="form-check-label  " for="inlineRadio13">Indian</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine" id="inlineRadio14"
+                                        value="Chinese" onclick="checkValidator()">
+                                    <label class="form-check-label  " for="inlineRadio14">Chinese</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Prep Time-->
+                        
+                         <div class="dash-status-style-edit text-pink">Prep Time:</div>
+                        <div class="row bg-light ">
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline ">
+                                    <input class="form-check-input ml-3" type="radio" name="prep" id="inlineRadio15"
+                                        value="Normal" onclick="checkValidator()">
+                                    <label class="form-check-label  " for="inlineRadio15">Normal</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="radio" name="prep" id="inlineRadio16"
+                                        value="Minimal" onclick="checkValidator()" >
+                                    <label class="form-check-label  " for="inlineRadio16">Minimal</label>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        <!-- buttons -->
+                        <div class="text-center mt-2 btn-cancel">
+                            
+                            <div class="col-12">
+                                <input type="submit" value="Edit" id="editJZ" class='btn rounded btn-pink' onclick="formVerification" disabled>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn btn-pink mt-2 rounded"><a href="/plates/list"
+                                        class="text-white">Cancel</a>
+                                </button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function previewImage() {
+        var img = document.getElementById("preview");
+        console.log(document.getElementById("preview"))
+        var file = document.getElementById("file").files;
+        if (file.length > 0) {
+            var fileReader = new FileReader();
+ 
+            fileReader.onload = function (event) {
+                document.getElementById("preview").setAttribute("src", event.target.result);
+            };
+ 
+            fileReader.readAsDataURL(file[0]);
+        }
+    }
+</script>
+
+
+
+<script>
+
+var editBtnJz = document.getElementById("editJZ");
+
+function checkValidator () {
+    if (
+        (
+        document.getElementById("inlineRadio1").checked == true ||
+        document.getElementById("inlineRadio2").checked == true ||
+        document.getElementById("inlineRadio3").checked == true ||
+        document.getElementById("inlineRadio4").checked == true)
+        &&
+        (
+        document.getElementById("inlineRadio5").checked == true ||
+        document.getElementById("inlineRadio6").checked == true ||
+        document.getElementById("inlineRadio7").checked == true ||
+        document.getElementById("inlineRadio8").checked == true ||
+        document.getElementById("inlineRadio9").checked == true)
+        &&
+        (
+        document.getElementById("inlineRadio10").checked == true ||
+        document.getElementById("inlineRadio11").checked == true ||
+        document.getElementById("inlineRadio12").checked == true ||
+        document.getElementById("inlineRadio13").checked == true ||
+        document.getElementById("inlineRadio14").checked == true)
+        &&
+        (
+        document.getElementById("inlineRadio15").checked == true ||
+        document.getElementById("inlineRadio16").checked == true)
+
+
+    )
+    editBtnJz.disabled = false
+}
+
+
+</script>

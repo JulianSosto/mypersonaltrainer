@@ -1,0 +1,368 @@
+<nav class="navbar navbar-expand navbar-dark fixed-top nav-top-dashboard max-height-navbar" style="">
+    <a href="#menu-toggle" id="menu-toggle" class="navbar-brand">
+        <span class="logomove">
+            <img src="img/mypt_logo_vector.svg" class="img-fluid dash-logo-nav " style="" />
+        </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+        aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active dash-text-home">
+                <a class="nav-link dash-text-home" href="/"><b>Home MyPT</b><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0"></form>
+    </div>
+</nav>
+
+
+
+
+
+<div id="wrapper" class="">
+    <!-- Sidebar -->
+
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav mt-2">
+            <hr>
+            <li><a href="/admin" class="text-status-darkpink-sidebar bb">Admin Dashboard</a></li>
+            <hr>
+            <li><a href="users/logout" class="text-pink-sidebar">Logout</a></li>
+            <hr>
+        </ul>
+    </div>
+
+    <div class="container mt-5 pt-5 ">
+        {{> _messages}}
+        <div class="row bg-light rounded">
+
+            <div class="col-lg-6 col-sm-12 mt-auto mb-auto" style="text-align:center;">
+                <!--img preview -->
+                <img id="preview" src="https://proveg.com/us/wp-content/uploads/sites/9/2019/10/Foodplate.jpg"
+                    class="img-fluid rounded" alt="" style=" width:100%;">
+            </div>
+            <div class="col-lg-6 col-sm-12 my-1">
+                <!--FORM -->
+                <form action="/plates/add" method="POST" enctype="multipart/form-data">
+                    <!--img browse -->
+                    <div class="dash-status-style-edit text-pink">Image:</div>
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="file">Choose file</label>
+                        <input id="file" type="file" name="file" class="custom-file-input" accept="image/*"
+                            onchange="previewImage();">
+                    </div>
+                    <div>
+                        <!-- Title -->
+                        <div class="dash-status-style-edit text-pink">Title:</div>
+                        <span class=" ">
+                            <input type="text" id="title" name="title" class="form-control" value="{{title}}">
+                        </span>
+
+                        <!-- directions -->
+                        <div class="dash-status-style-edit text-pink">Directions:</div>
+                        <textarea id="directions" name="directions" cols="30" rows="5" name="directions"
+                            class="form-control" aria-label="With textarea">{{directions}}</textarea>
+
+                        <!-- calories -->
+                        <div class="dash-status-style-edit text-pink">Calories:</div>
+                        <span class=" ">
+                            <input type="number" id="calories" name="calories" class="form-control"
+                                value="{{calories}}">
+                        </span>
+                        <!-- items -->
+
+                        <div class="dash-status-style-edit text-pink">Items:</div>
+                        <!-- Modal Items -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-pink mx-2" data-toggle="modal"
+                            data-target="#exampleModalCenter">
+                            Add Items
+                        </button>
+
+                        <ol id="list-items">
+                            acá van los items, en una lista sordenada. Agregar los items cn el label "li"
+                        </ol>
+
+                        <!-- Modal-->
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-status-darkpink" id="exampleModalLongTitle">Add
+                                            items</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!--modal-->
+                                        <div class="dash-status-style-edit text-pink mx-1">Items:</div>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="items" placeholder="Add a item">
+                                            <label for="floatingPassword">Add a item</label>
+                                        </div>
+                                        <div class="dash-status-style-edit text-pink mx-1">Quantities:</div>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="quantities" placeholder="Quantities">
+                                            <label for="floatingPassword">Quantities</label>
+                                        </div>
+                                        <div class="dash-status-style-edit text-pink mx-1">Type:</div>
+                        
+                        
+                                        <div class="container row">
+                        
+                                            <div class="col-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="flexRadioDefault17">
+                                                    <label class="form-check-label" for="flexRadioDefault17">
+                                                        Unit
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="flexRadioDefault18">
+                                                    <label class="form-check-label" for="flexRadioDefault18">
+                                                        L.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="flexRadioDefault19">
+                                                    <label class="form-check-label" for="flexRadioDefault19">
+                                                        Ml.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="flexRadioDefault20">
+                                                    <label class="form-check-label" for="flexRadioDefault20">
+                                                        Kg.
+                                                    </label>
+                                                </div>
+                                            </div>
+                        
+                        
+                                            <div class="col-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                                        checked>
+                                                    <label class="form-check-label" for="flexRadioDefault21">
+                                                        Gr.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <span><button type="button" class="btn btn-pink btn-sm mb-2" onclick="addNewItem()">Add a new
+                                                item</button></span>
+                                    </div>
+
+                                    <div class="modal-footer" id="modal-items">
+                                        Julizan
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-pink">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FIN modal items -->
+
+                        <!-- Tips -->
+                        <div class="dash-status-style-edit text-pink">Tips:</div>
+                        <span class=" ">
+                            <input type="text" id="tips" name="tips" class="form-control" value="">{{tips}}</span>
+
+                        <!-- type of foods -->
+                        <div class="dash-status-style-edit text-pink">Type of food:</div>
+                        <div class="row bg-light">
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="food_type"
+                                        id="inlineRadio1" value="Breakfast" onclick="validarCheck()">
+                                    <label class="form-check-label   " for="inlineRadio1">Breakfast</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="food_type"
+                                        id="inlineRadio2" value="Meal" onclick="validarCheck()">
+                                    <label class="form-check-label   " for="inlineRadio2">Meal</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="food_type"
+                                        id="inlineRadio4" value="Snack" onclick="validarCheck()">
+                                    <label class="form-check-label   " for="inlineRadio4">Snack</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- type of diet -->
+                        <div class="dash-status-style-edit text-pink">Type of diet:</div>
+                        <div class="row bg-light ">
+
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline ">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type"
+                                        id="inlineRadio5" value="Normal" onclick="validarCheck()">
+                                    <label class="form-check-label   " for="inlineRadio5">Normal</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type"
+                                        id="inlineRadio6" value="Vegetarian" onclick="validarCheck()">
+                                    <label class="form-check-label   " for="inlineRadio6">Vegetarian</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type"
+                                        id="inlineRadio7" value="Vegan" onclick="validarCheck()">
+                                    <label class="form-check-label   " for="inlineRadio7">Vegan</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type"
+                                        id="inlineRadio8" value="Gluten Free" onclick="validarCheck()">
+                                    <label class="form-check-label   " for="inlineRadio8">Gluten Free</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="diet_type"
+                                        id="inlineRadio9" value="Lactosa Free" onclick="validarCheck()">
+                                    <label class="form-check-label   " for="inlineRadio9">Lactose Free</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dash-status-style-edit text-pink">Cuisine:</div>
+                        <div class="row bg-light ">
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline ">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine"
+                                        id="inlineRadio10" value="Mexican">
+                                    <label class="form-check-label   " for="inlineRadio10">Mexican</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine"
+                                        id="inlineRadio11" value="Maltese">
+                                    <label class="form-check-label   " for="inlineRadio11">Maltese</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine"
+                                        id="inlineRadio12" value="Mediterranean">
+                                    <label class="form-check-label   " for="inlineRadio12">Mediterranean</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine"
+                                        id="inlineRadio13" value="Indian">
+                                    <label class="form-check-label   " for="inlineRadio13">Indian</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="checkbox" name="cuisine"
+                                        id="inlineRadio14" value="Chinese">
+                                    <label class="form-check-label   " for="inlineRadio14">Chinese</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Prep time -->
+                        <div class="dash-status-style-edit text-pink">Prep Time:</div>
+                        <div class="row bg-light ">
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline ">
+                                    <input class="form-check-input ml-3" type="radio" name="prep" id="inlineRadio15"
+                                        value="Normal">
+                                    <label class="form-check-label   " for="inlineRadio15">Normal</label>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6 checkpadding">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ml-3" type="radio" name="prep" id="inlineRadio16"
+                                        value="Minimal">
+                                    <label class="form-check-label   " for="inlineRadio16">Minimal</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- buttons -->
+                        <div class="text-center mt-2 btn-cancel muted">
+                            <div class="col-12">
+                                <input type="submit" value="Save Plate" class='btn rounded btn-pink' name="add_to_cart"
+                                    id="btn_Validar">
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn btn-pink mt-2 rounded"><a href="/admin"
+                                        class="text-white">Cancel</a></button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('btn_Validar').disabled = true;
+
+    function validarInput() {
+        document.getElementById("btn_Validar").disabled = !document.getElementById("quanti").value.length;
+    }
+
+    function validarCheck() {
+        if ((document.getElementById('inlineRadio1').checked || document.getElementById('inlineRadio2').checked || document.getElementById('inlineRadio4').checked) && (document.getElementById('inlineRadio5').checked || document.getElementById('inlineRadio6').checked || document.getElementById('inlineRadio7').checked || document.getElementById('inlineRadio8').checked || document.getElementById('inlineRadio9').checked)) { document.getElementById('btn_Validar').disabled = false }
+    }
+
+
+    function previewImage() {
+        var img = document.getElementById("preview");
+        console.log(document.getElementById("preview"))
+        var file = document.getElementById("file").files;
+        if (file.length > 0) {
+            var fileReader = new FileReader();
+
+            fileReader.onload = function (event) {
+                document.getElementById("preview").setAttribute("src", event.target.result);
+            };
+
+            fileReader.readAsDataURL(file[0]);
+        }
+    }
+
+    function addNewItem() {
+    
+        
+                  }
+</script>

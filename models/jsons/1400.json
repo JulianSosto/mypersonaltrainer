@@ -1,0 +1,545 @@
+{
+   "name": "1400 Kcal",
+   "type": "normal",
+   "features": [
+      "Breakfast: 250Kcal",
+      "Lunch: 500Kcal",
+      "Dinner : 500kcal",
+      "Snack 1: 150Kcal",
+      "Snack 2:  0Kcal"
+   ],
+   "days": [
+      {
+         "name": "Day 1",
+         "breakfast": {
+            "title": "Egg Bruschetta with tomato",
+            "calories": 250,
+            "items": "1 whole meal slices ,1 egg ,9ml vegetable oil ,4 cherry tomatoes ,12 g Parmesan",
+            "directions": "1. In a bowl, dip beat the egg, and then combine egg, cheese and salt.2. Dip the bread slices into the egg mixture.3. Place 9ml oil in a pan and put the bread slices to fry for 2 mins each side. Then remove bread and set aside.4. Place the garlic, and tomatoes on the pan and cook for 3 mins while stirring occasionally.5. Top the bread with the cherry tomato mixture and sprinkle the fresh basil.6. Top off with salt and pepper if desired.",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Chickpea pesto Pasta salad ",
+            "calories": 500,
+            "items": "55g  Raw whole meal pasta ,100g  Canned chickpeas ,40g  Pesto ,5  Chopped Cherry tomatoes ,15g Parmesan",
+            "directions": "Cook pasta according to packet instructionsWhen cooked, mix pasta with the rest of the ingredients and serve",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Mexican tofu with avocado and broccoli ",
+            "calories": 500,
+            "items": "180g Firm tofu ,¾  Medium avocado ,100g Chopped broccoli ,12ml vegetable oil ,28g Sour cream ,½  tsp cilantro ,½ tsp chili powder ,1 tbsp lemon/lime juice ,",
+            "directions": "Place 12 ml of vegetable oil in a pan and cook the tofu and chopped broccoli on medium/high heat until goldenServe the tofu and broccoli mix with sliced avocado, cilantro, lime/lemon juice and chili powder.Place 35g sour cream and serve",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Cereal ",
+            "calories": 150,
+            "items": "28g Weetabix Protein crunch cereal Chocolate ,140ml Skimmed milk",
+            "directions": "",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 2",
+         "breakfast": {
+            "title": "Overnight Vanilla & Banana oats ",
+            "calories": 250,
+            "items": "24g plain Quaker oats ,120g low fat vanilla yogurt ,1 medium bananaDirectionsFrom the night before, in a jar, mix the oats, vanilla yogurt and bananaRefrigerate overnight and serve in the morning",
+            "directions": "",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Chicken Wrap ",
+            "calories": 500,
+            "items": "1 small tortilla wrap (62g) ,75g Chopped Chicken breast (weighed raw) ,30g Canned chickpeas ,12g Mayonnaise ,4 cherry tomatoes ,12ml Vegetable oil  ,Salt, pepper and paprikaRucola/leafy greens or shredded lettuce",
+            "directions": "Season the chicken breast with salt and pepper and smoked paprika.Place 12ml vegetable oil in a medium/high heat pan and cook the chickenIn a bowl, mix the chopped cooked chicken, mayonnaise, cherry tomatoes and chickpeas.Place mixture in a wrap and either serve toasted if preferred.",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Chickpea avocado rice salad ",
+            "calories": 500,
+            "items": "45g uncooked basmati rice ,40g Canned chickpeas ,18gSalad cream ,½ medium avocado ,8 cherry tomatoes ,12 ml vegetable oil",
+            "directions": "Boil the basmati rice as instructed by packet.Place 12ml of vegetable oil in a medium high heat pan, place the chickpeas and let to cook for 3 mins and then add the chopped cherry tomatoes and the cooked rice.Place the mixture in a plate and top off with the avocado and salad cream.",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Roasted chickpeas ",
+            "calories": 150,
+            "items": "82g canned chickpeas ,8 ml of vegetable oil",
+            "directions": "In a bowl, mix 8ml of vegetable oil on the chickpeas and add salt, pepper and seasoning of choiceSpread evenly on a dish and cook for a few mins in the oven on medium high heat.",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 3",
+         "breakfast": {
+            "title": "Apple Pie & walnut Greek yogurt",
+            "calories": 250,
+            "items": "170g 0% fat Greek yogurt ,1 small finely chopped apple (preferably with skin)12g Honey ,10g Walnuts ,¼ tsp cinnamon",
+            "directions": "Mix all ingredients together and serve! ",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Chicken & Broccoli Couscous ",
+            "calories": 500,
+            "items": "125g Uncooked chicken breast ,45g uncooked couscous ,100g chopped broccoli ,10 chopped almonds ,12ml vegetable oilSalt & pepper",
+            "directions": "Cook the couscous according to packet instructionsSeason chopped chicken breast with salt and pepper.Meanwhile, Place 15ml of vegetable oil in a medium high heat.Place the chopped almonds on the pan and cook for 2/3 mins while stirring occasionally. Put almonds to the side and cook the chicken breast.When chicken breast is almost cooked, add in the pan the cooked quinoa, chopped broccoli (you can boil/steam the broccoli if you prefer it to be softer), the almonds and cook for 2/3 mins while occasionally stirring.Serve 😊",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Beef quinoa and vegetables",
+            "calories": 500,
+            "items": "106g Lean minced beef ,45g quinoa ,10g chopped Broccoli ,114 Finely chopped carrots12 ml Vegetable oilSalt, pepper and smoked paprika",
+            "directions": "Cook the quinoa as stated by packet instructionsMeanwhile place 12ml of vegetable oil in a medium/high heat pan and let the finely chopped carrots to cook for 2 mins, then add the beef and broccoli and let it cook for 4 mins.Add the cooked quinoa in the pan with the rest of the ingredients and let to cook for another minute while stirring occasionally.",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Banana & Almonds ",
+            "calories": 0,
+            "items": "1 medium banana ,8 almonds",
+            "directions": "",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 4",
+         "breakfast": {
+            "title": "Peanut butter & jam toast ",
+            "calories": 250,
+            "items": "1.5 wholemeal slices ,16g Peanut butter ,18g jam",
+            "directions": "Can be served toasted if preferred ",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Shrimp rice and vegetables ",
+            "calories": 500,
+            "items": "140g uncooked shrimps ,40g Uncooked basmati rice ,0.5g medium avocado ,32g Canned chickpeas ,90g Broccoli ,10g garlic butter",
+            "directions": "Boil the chopped broccoli for a few minsMeanwhile, Place pan in a medium high heat and add the garlic butterAdd the shrimps and chickpeas into the pan and let to cook for 3-4 mins while stirring occasionally. Then add the broccoli, cooked rice and avocado and continue stirring.Serve 😊",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Traditional Maltese bread with Tuna ",
+            "calories": 500,
+            "items": "65 g Maltese bread ,42.64g Rio Mare tuna in olive oil (Properly drained!)32.8g fresh ġbejna in water ,41g canned white beans ,24g Kunserva5 black olives ,Garlic, onion and rucola/leafy greens!",
+            "directions": "Mix all ingredients (except the bread) in a bowlTop the mixture on toasted (optional) Maltese bread.",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Protein Bar",
+            "calories": 150,
+            "items": "Find a protein bar not exceeding 160kcal)",
+            "directions": "",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 5",
+         "breakfast": {
+            "title": "Greek Yogurt, peanut butter & Banana",
+            "calories": 250,
+            "items": "150g 0% Greek yogurt ,0.5 medium Banana ,17g Peanut butter",
+            "directions": "1. Chop medium banana in a bowl and mix with 150g 0% fat Greek yogurt in a bowl.2. Add 17g peanut butter",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Salmon with Rice and vegetables ",
+            "calories": 500,
+            "items": "102.g Salmon fillet ,40 g whole meal rice5 cherry tomatoes ,25g Feta Cheese ,1  boiled egg ,25g Canned Red kidney beansBell peppers, cucumbers and leafy greens in generous amounts",
+            "directions": "1. Pre-heat grill to high heat2. Sprinkle some salt, pepper and paprika and grill salmon for 2-3 mins each side1. Boil egg of 8 mins2. Cook 50g whole meal rice and combine the cherry tomatoes, feta cheese and red kidney beans together and serve along the Salmon fillet",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Beef with Potatoes and vegetables ",
+            "calories": 600,
+            "items": "110g Lean beef strips ,205g White potato ,1 cup chopped broccoli ,1 cup chopped cauliflower25g Parmesan",
+            "directions": " 1. Preheat the grill to high heat and add 1 kcal oil spray2. Sprinkle the beef strips generously with salt and pepper and put in the pan to cook3. After 3 mins, add the chopped broccoli and cauliflower together with the beef strips and cook for another 3 mins or until cooked to your liking4. White potato can be boiled, cooked in an airfryer or in the oven. Use salt and pepper and choice of herbs to season.5. Serve all ingredients together, sprinkle 25g Parmesan on top and enjoy!",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Yogurt & almonds ",
+            "calories": 150,
+            "items": "150g Flavored yogurt Benna light12 almonds",
+            "directions": "Mix together and eat separately. ",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 6",
+         "breakfast": {
+            "title": "Cheesy omelet toast ",
+            "calories": 250,
+            "items": "2 whole meal slices ,1 medium whole egg ,20g slice cheddar ,¼ medium chopped onion",
+            "directions": " 1. Heat the pan to medium-high heat, add some 1 kcal oil spray, and add the onion and let to cook for 3 mins.2. Beat the egg in a bowl, and add the fried chopped onion and mix. Add salt, pepper and herbs of choice.3. Put the mixture in the pan and cook for 1-2 mins each side.4. Toast the bread (optional), Fill the toast with omelet and slice cheese and serve.",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Creamy rice & Tuna salad ",
+            "calories": 500,
+            "items": "1 small can tuna in brine (rio mare) (drained) (52g) ,40g uncooked rice ,25g Feta cheese ,4 olives ,4 cherry tomatoes12g Mayonnaise1 cup leafy greens½  bell pepperCucumber (add freely)",
+            "directions": " 1. Book the rice according to package instructions.2. Drain properly the tuna from oil, and mix together with all other ingredients. Ensure you weight the mayonnaise accurately ",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Tortilla Pizza ",
+            "calories": 500,
+            "items": "1 small tortilla wrap (62g) ,2.5 TBSP tomato sauce ,4 olives ,22g sliced peperoni35 g Mozzarella ,12ml Oil ,Season with salt, pepper and oregano",
+            "directions": " 1. Open a large tortilla and cover with 2.5 tbsp tomato paste.2. Cover with 35g Shredded mozzarella on top of the tomato paste3. Add the sliced peperoni, olives on top.4. Add salt, pepper and oregano on top and drizzle the accurately measured oil on top.5. Cook in oven for a few mins until cooked to your liking",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Greek yogurt & Jam ",
+            "calories": 150,
+            "items": "140g 0% fat Greek yogurt ,1 tsp jam ,8 almonds",
+            "directions": "1. In a bowl, mix the 0% fat Greek yogurt , 1 leveled tsp jam.2. Add almonds in the mixture or enjoy separately.3. You can add stevia or sweetener or vanilla essence (optional)",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 7",
+         "breakfast": {
+            "title": "Salmon and avocado toast ",
+            "calories": 250,
+            "items": "1  wholemeal slices ,¼  medium avocado ,45g Smoked salmon ,Black pepper (optional)",
+            "directions": "",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Prawn, Avocado & Egg salad",
+            "calories": 500,
+            "items": "188g prawns ,¼  Avocado ,1 hardboiled egg ,8 cherry tomatoes ,30g Sweet corn ,10ml of oilDash of lemon juice ,Leafy green of choice ,",
+            "directions": "1.  Boil the egg for 4 mins2. Meanwhile, Put a pan on medium high heat with 10ml of oil. Cook the prawns for a few minutes.3. Mix the prawns with the rest of the ingredients. You can use leafy greens and cucumbers freely",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Chicken & Hummus Wrap ",
+            "calories": 500,
+            "items": "1 large tortilla wrap (80g)145g Chicken breast ,2 levelled TBSP Hummus ,4 tomatoes ,5 olives ,Salt, pepper (optional) and leafy greens",
+            "directions": "Chopped the chicken breast into small cubes and season generously with salt and pepper. Cook on high heat using some oil spray.Spread the hummus on the wrap and add the chicken and other ingredients on it, wrap it up and serve 😊",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Banana & Peanut butter smoothie ",
+            "calories": 150,
+            "items": "80g 0% fat Greek yogurt ,½  medium banana ,10g Peanut butter ,200ml unsweetened almond milk",
+            "directions": "1. Mix all ingredients in a smoothie blender.2. Add ice if desired 😊",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 8",
+         "breakfast": {
+            "title": "Peanut butter and banana Rice cakes",
+            "calories": 250,
+            "items": "2 Thick rice cakes ,1 medium banana ,14g Peanut butter",
+            "directions": "Spread the peanut butter on the rice cakesSpread slice banana on top and enjoy!",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Fancy Chicken sandwich ",
+            "calories": 500,
+            "items": "100g Chicken breast ,2 whole meal slice bread ,12g Butter ,30g Mozzarella Di bufola ,½  medium avocado",
+            "directions": "Slice and season the chicken breast generously with salt, pepper and smoked paprika (optional)Cook the chicken on medium high heat using 1 kcal oil spray for approximately 3 mins each side or until properly cooked.Spread 12g of butter (Properly measured and weighed) on bread, and fill the bread with the rest of the ingredients 😊",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Salmon sandwich",
+            "calories": 500,
+            "items": "2 slices wholemeal bread ,125g Salmon fillets ,10g Honey ,8g mayonnaise ,5ml vegetable oil ,2 cups leafy greens or shredded lettuce",
+            "directions": "Season the salmon fillet with salt, peppers and paprikaPut a pan on medium high heat, add the accurately measured oil and cook the salmon 3 mins on each sideIn a small bowl, mix the honey and mayonnaise and then use as a spread on the bread.Place the leafy greens and salmon on bread and serve",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Small platter ",
+            "calories": 150,
+            "items": "20g Galletti tal-furnat (water biscuits) ,28g Feta Cheese ,4 cherry tomatoes",
+            "directions": "",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 9",
+         "breakfast": {
+            "title": "Omelette with garlic butter ",
+            "calories": 250,
+            "items": "2 Whole medium eggs ,1 egg white ,13g Garlic butter ,40g Mushrooms ,40g bell pepper ,",
+            "directions": "Put a pan on medium high heat, add the accurately measured garlic butter on the pan and when molten, add the chopped bell peppers and chopped onionsLet bell peppers to cook for 2 mins, then add mushroom to cook together with the bell pepper and onion. Cook for another 3 minsIn a bowl, mix the 2 whole eggs, 1 egg white and the contents of the pan and mix well.Cook whole egg mixture again on the pan for 2 mins each side.",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Healthy Chicken Caesar Salad ",
+            "calories": 500,
+            "items": "100g Uncooked chopped chicken breast ,20g Parmesan Cheese ,20g Caeser dressing33g Collar bacon ,12.Walnuts ,2 cups shredded lettuce/ leafy greens ,6.56 Cherry tomatoes ,49.2 g bell pepperSalt, pepper and seasoning of choice",
+            "directions": "Season the chicken breast and cook on medium high heat on a pan using 1 kcal spray.Cook the chopped bacon.In a bowl, spread out the leafy greens, and top it up with the cooked chicken and bacon. Add the cherry tomatoes, walnuts bell peppers and the Caesar dressing. And sprinkle the parmesan cheese",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Turkey stuffed bell peppers ",
+            "calories": 500,
+            "items": "100g Uncooked minced turkey ,40g uncooked basmati rice ,1  Whole bell pepper  (seeds and top removed)160ml Tomato sauce ,22g Shredded Cheddar ,1/2 shredded medium onionSalt, pepper and smoked paprika",
+            "directions": "Cook the basmati rice according to packet instructions.Meanwhile, Put some 1 kcal light spray on a medium high heat pan, fry the chopped onions for 2 mins, and add the minced turkey (seasoned with salt pepper and smoked paprika) to cook for another 4 mins while occasionally stirring.Add the tomato sauce in the pan and continue cooking for a 2 mins and remove from pan from heat.Add the shredded cheddar and the cooked rice to the mixture and mix properly.Stuff the bell pepper, Put in a baking dish, cover in foil and bake in the over for another 25 mins.",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Crackers with Ricotta ",
+            "calories": 150,
+            "items": "2 Branette Crackers ,50g Rikotta ,5 cherry tomatoes ,Salt and pepper",
+            "directions": "Spread the ricotta equally on the branette crackers ,Top with chopped cherry tomatoes and sprinkle salt and pepper on top",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 10",
+         "breakfast": {
+            "title": "Coffee & Walnut overnight oats ",
+            "calories": 0,
+            "items": "25g oats ,40g 0% Greek yogurt ,100ml skimmed milk or low calorie milk of choice ,12g maple syrup ,1 tsp Instant coffee ,12g Walnuts",
+            "directions": "Mix all ingredients in a Jar and refrigerate overnight ",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Mediterranean Chickpea Wrap",
+            "calories": 500,
+            "items": "1 small whole meal wrap (62g)82g canned chickpeas ,1.5 tbsp Hummus ,12ml Tahini ,¼  Avocado ,4 Cherry tomatoes ,Leafy greens ,Salt, pepper and Mint seasoning.",
+            "directions": "Mix all ingredients together and wrap it up! 😊",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Healthy Maltese Platter ",
+            "calories": 0,
+            "items": "50g Maltese bread ,32.8g Bigilla ,32.8g maltese Sausage ,40g gbejna Friska ,50g White beans ,6 Olives ,8 cherry tomatoes",
+            "directions": "",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Yogurt & banana ",
+            "calories": 150,
+            "items": "1 small pot Alpro Soya Chocoate Yogurt ,1 medium banana",
+            "directions": "",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 11",
+         "breakfast": {
+            "title": "Refreshing Strawberry Smoothie ",
+            "calories": 250,
+            "items": "120g 0% fat Greek yogurt ,25g oats ,4 Large strawberries ,15ml Honey",
+            "directions": "Mix all ingredients in a blender and serve.",
+            "tip": "Use Frozen strawberries for a refreshing smoothie! 😊"
+         },
+         "lunch": {
+            "title": "Tuna Salad ",
+            "calories": 500,
+            "items": "1 small can tuna in brine45g uncooked rice ,12g  Mayonnaise ,6 large olives ,65 g chopped bell pepper ,½ medium onion ,4 cherry tomatoes ,2 cups shredded lettuce or leafy greens",
+            "directions": "Place all ingredients on a bed of leafy greens 😊  ",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Sun dried tomatoes, mozzarella and spinach stuffed Chicken breast ",
+            "calories": 500,
+            "items": "165g Chicken breast ,32g Mozzarella ,4 pieces sun dried tomato (not in oil!)6.56 large chopped olives ,1 cup spinach ,100g Broccoli ,100g Cauliflower ,10ml Vegetable oil",
+            "directions": "Cut a pocket in the chicken breast, making sure not to cut all the way.Season the chicken with salt, pepper and garlic powder from both sides.Stuff the chicken with Spinach, Sun dried tomatoes and spinach, close and secure filling doesn’t fall out using toothpicks.In a hot pan, put 12ml of vegetable oil, and cook the chicken 2 mins on each side.Place the chicken in the oven and cook for an additional 20 mins or until fully cooked",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Yogurt & Banana",
+            "calories": 150,
+            "items": "1 small pot light flavoured/ plain Benna yogurt ,1 medium banana",
+            "directions": "Can be taken together, or separately. Listen to your hunger ques! ",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 12",
+         "breakfast": {
+            "title": "Mini English Breakfast",
+            "calories": 250,
+            "items": "1 slice wholemeal toast ,50g Baked beans in tomato sauce ,1 egg ,45g Dew Fresh Collar bacon",
+            "directions": "Fry the egg and the bacon in 1 Kcal spray and toast the bread.Serve the baked beans, fried egg and bacon along side with the toast and enjoy",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Chicken Coleslaw Wrap",
+            "calories": 500,
+            "items": "1 small  tortilla wrap (60g) ,100g Chopped uncooked chicken breast ,15g Mayonnaise ,12g Sweet chilli sauce ,12ml vegetable oil ,Plain coleslaw mix (without mayonnaise)Salt, pepper and seasoning",
+            "directions": "Season the chopped chicken breast generously with salt, pepper and seasoning (smoked paprika or bacon flavoured seasoning is our favourite!)Put a pan on medium high heat and place 12ml of vegetable oil and let the chicken to cookMeanwhile, do the coleslaw mix by mixing approximately ½ cup of plain coleslaw with 15g Mayonnaise and 15g Sweet Chilli sauceOpen 1 large tortilla wrap and place some leafy green, top it off with the coleslaw mix and the cooked chicken and wrap it up! 😊",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Ribeye Steak with vegetables ",
+            "calories": 500,
+            "items": "150g Ribeye ,1 cup broccoli ,1 cup Cauliflower ,Salt and pepper to taste",
+            "directions": "Season the Ribeye Generously with salt and pepperPut a pan on high heat, cook the Ribeye to your personal preference using 1 kcal spray. You can also BBQ the Ribeye without any oil at all! (Ribeye has a good amount of fat in it!)Boil the vegetables for 4 mins to soften them a bit and serve along side with the Ribeye. You can “fry” the vegetables in 1 Kcal spray (or on the same pan where you cooked the Ribeye) if you prefer your vegetables this way!Feel free to season your vegetables with salt, pepper and spices of choice!",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Flavoured Greek Yogurt & Blue berries ",
+            "calories": 150,
+            "items": "1 small pot Flavoured Delta Greek yogurt",
+            "directions": "Coffee flavour is our favourite!",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 13",
+         "breakfast": {
+            "title": "Tofu Scramble",
+            "calories": 250,
+            "items": "80g Hard tofu ,¼ medium Medium avocado ,10 ml vegetable oil ,½ Medium Onion ,½ tsp chilli flakes ,¼ tsp turmeric ,¼ tsp smoked paprika ,¼ tsp garlic powder ,Salt to your preference",
+            "directions": "Set a pan on medium high heat and drizzle 10ml of vegetable oil in itAdd the chopped onion and mix properly and immediately add all the spices and let to cook together with the onion for 2/3 minsAdd the diced tofu in the onion mixture and stir well until all tofu is covered with spices. Cook until tofu is warm throughout.",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Chicken Pesto Pasta salad ",
+            "calories": 500,
+            "items": "12g Diced uncooked chicken breast ,45g wholemeal pasta ,35g Pesto sauce ,12g Walnuts ,100g Chopped broccoliSalt and pepper",
+            "directions": "Cook the pasta according to packet instructions. A few mins before pasta is cooked, add the broccoli let boil a bit to soften.Meanwhile, season the diced chicken with salt and pepper and cook on high heat in a pan using 1 kcal oil sprayIn a bowl, Mix the pasta, broccoli, chicken, pesto sauce (accurately measured!) and crushed walnuts and mix together.Serve and enjoy 😊",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Grilled Salmon fillet with Rice and vegetables ",
+            "calories": 500,
+            "items": "115g Salmon fillet ,40g Uncooked rice ,1 tsp coconut sugar ,1 cup chopped broccoli ,50g Carrot (1 medium) ,12ml vegetable oil ,Salt and pepper",
+            "directions": "Pre-heat the grill to high heatBrush fillet with oil, salt, pepper and coconut sugar and grill for 2-3 min each side and set aside when readyPrepare the rice according to packet instructions and set asideIn a wok pan, put some cooking spray and cook the chopped broccoli and carrot, add some salt and pepper or seasonings of choice and let to cook for about 5 minutes.Remove vegetables from pan and serve alongside with salmon and rice 😊",
+            "tip": ""
+         },
+         "snack1": {
+            "title": "Ricotta on open toast ",
+            "calories": 150,
+            "items": "1 slice wholemeal bread ,40g Ricotta ,4 cherry tomatoes ,Salt, pepper & Chilli flakes",
+            "directions": "Toast the bread and top with ricotta and cherry tomatoesSprinkle with salt, pepper and some chilli flakes (optional)",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      },
+      {
+         "name": "Day 14",
+         "breakfast": {
+            "title": "Egg and feta Toast ",
+            "calories": 250,
+            "items": "2 slices wholemeal bread ,1 whole egg ,25 Feta Cheese ,4 cherry tomatoes ,Leafy greens",
+            "directions": "Cook the egg in a medium high heat pan using 1 kcal oil spray.Toast the bread and top it with leafy greens, cherry tomatoes, feta cheese and the egg. Sprinkle with salt, pepper and chilli flakes (optional!)",
+            "tip": ""
+         },
+         "lunch": {
+            "title": "Smoked salmon and Shrimp salad ",
+            "calories": 500,
+            "items": "120g Shrimp ,50g Smoked salmon ,1 ½  tbsp Sunflower seeds ,40g Sweet corn ,6 large olives ,¼  medium avocado ,6 cherry tomatoes80g bell pepper ,80g cucumber ,10ml vegetable oil ,Salt, pepper and chilli flakes (optional)1 tsp lemon juice1 cups leafy greens or shredded lettuce",
+            "directions": "In a medium heat pan, put the accurately weighed vegetable oil and cook the shrimps. Add salt and pepper and chili flakes (optional) and set aside.Prepare a bed of leafy greens on a salad bowl and top up with all salad ingredients including the smoked salmon and the shrimps and serve 😊",
+            "tip": ""
+         },
+         "dinner": {
+            "title": "Chicken, Quinoa and vegetables ",
+            "calories": 500,
+            "items": "130g Chicken breast ,45g uncooked quinoa ,40g Canned corn ,½  cup green beans ,1 cup broccoli ,12ml vegetable oil8 cherry tomatoes ,1 tsp smoked paprika ,1 tsp cayenne pepper ,½ tsp Cajun seasoning ,1 tsp stevia",
+            "directions": "Set a pan on medium-high heat and put 12ml (accurately measured) of oil. Put the chopped chicken (seasoned with salt and pepper) to cook for 3-4 mins and then reduce heat to low.Add the finely chopped tomatoes, corn, and all the spices and stevia and continue stirring.Add ¼ cup water and the quinoa portion to the pan and continue cooking for another 20-25 mins while stirring occasionally.Steam or boil the broccoli and green beans to the side and when done serve with the quinoa and chicken mix!",
+            "tip": "You can add the broccoli and green beans mix together with the quinoa when you add water on the same pan if you wish to save on prep time!"
+         },
+         "snack1": {
+            "title": "Dark chocolate ",
+            "calories": 150,
+            "items": "You can enjoy this snack with some tea/coffee with a splash of skimmed milk and sweetener (optional) ",
+            "directions": "",
+            "tip": ""
+         },
+         "snack2": {
+            "title": "",
+            "calories": 0,
+            "items": "",
+            "directions": "",
+            "tip": ""
+         }
+      }
+   ]
+}
